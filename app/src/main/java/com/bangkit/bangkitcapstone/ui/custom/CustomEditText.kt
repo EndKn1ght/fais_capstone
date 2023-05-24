@@ -13,10 +13,11 @@ import androidx.appcompat.widget.AppCompatEditText
 import androidx.core.content.ContextCompat
 import com.bangkit.bangkitcapstone.R
 
-class CustomEditText: AppCompatEditText, View.OnTouchListener {
+class CustomEditText : AppCompatEditText, View.OnTouchListener {
 
     private lateinit var clearButtonImage: Drawable
     private lateinit var iconDrawable: Drawable
+    private var isEmail: Boolean = false
 
     constructor(context: Context) : super(context) {
         init(context, null)
@@ -40,6 +41,7 @@ class CustomEditText: AppCompatEditText, View.OnTouchListener {
         setBackgroundResource(R.drawable.rounded_edittext_bg)
         val ta = context.obtainStyledAttributes(attrs, R.styleable.IconEditText)
         iconDrawable = ta.getDrawable(R.styleable.IconEditText_drawableIcon)!!
+        isEmail = ta.getBoolean(R.styleable.IconEditText_isEmail, false)
         ta.recycle()
 
         setOnTouchListener(this)
@@ -52,9 +54,9 @@ class CustomEditText: AppCompatEditText, View.OnTouchListener {
         )
 
         addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) { }
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
 
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) { }
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
 
             override fun afterTextChanged(s: Editable?) {
                 if (s.toString()
@@ -90,6 +92,8 @@ class CustomEditText: AppCompatEditText, View.OnTouchListener {
 
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
+        hint =
+            if (isEmail) resources.getString(R.string.email_hint) else resources.getString(R.string.username_hint)
         textAlignment = View.TEXT_ALIGNMENT_VIEW_START
     }
 

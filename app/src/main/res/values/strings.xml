@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">Bangkit Capstone</string>
-    <string name="password_input_hint">Password…</string>
+    <string name="welcome_back">Welcome Back</string>
+    <string name="please_log_in">Please Log In To Your Account</string>
+    <string name="email_hint">Email…</string>
+    <string name="password_hint">Password…</string>
+    <string name="username_hint">Username…</string>
+    <string name="login_button">Login</string>
+    <string name="register_text">Doesn\'t have an account?</string>
+    <string name="register_text_button">Sign Up</string>
 </resources>

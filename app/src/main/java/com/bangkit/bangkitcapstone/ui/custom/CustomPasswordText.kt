@@ -130,7 +130,7 @@ class CustomPasswordText : AppCompatEditText, View.OnTouchListener {
 
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
-        hint = resources.getString(R.string.password_input_hint)
+        hint = resources.getString(R.string.password_hint)
         textAlignment = View.TEXT_ALIGNMENT_VIEW_START
 
     }
