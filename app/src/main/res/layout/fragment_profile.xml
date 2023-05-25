@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragment.ProfileFragment">
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="850dp"
+        android:background="@drawable/circular_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/user_profile_image"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="64dp"
+        android:contentDescription="TODO"
+        android:src="@drawable/ic_person"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/user_realname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/username_placeholder"
+        android:textColor="@color/text_color_primary"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/user_profile_image"
+        app:layout_constraintStart_toStartOf="@+id/user_profile_image"
+        app:layout_constraintTop_toBottomOf="@+id/user_profile_image" />
+
+    <TextView
+        android:id="@+id/user_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/email_placeholder"
+        android:textColor="@color/text_color_primary"
+        android:textSize="11sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/user_profile_image"
+        app:layout_constraintStart_toStartOf="@+id/user_profile_image"
+        app:layout_constraintTop_toBottomOf="@+id/user_realname" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/option_bookmark"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="84dp"
+        android:layout_marginEnd="32dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardElevation="0dp"
+        app:layout_constraintStart_toStartOf="@id/user_profile_image"
+        app:layout_constraintTop_toBottomOf="@+id/user_email">
+
+        <TextView
+            android:id="@+id/option_bookmark_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="8dp"
+            android:padding="8dp"
+            android:text="@string/favorites"
+            android:textColor="@color/text_color_primary"
+            app:drawableEndCompat="@drawable/ic_arrow_right"
+            app:drawableStartCompat="@drawable/ic_bookmark_false" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <View
+        android:id="@+id/simple_line_first"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="32dp"
+        android:background="@color/text_color_primary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/option_bookmark" />
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/dark_mode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="32dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardElevation="0dp"
+        app:layout_constraintStart_toStartOf="@+id/option_bookmark"
+        app:layout_constraintTop_toBottomOf="@+id/simple_line_first">
+
+        <TextView
+            android:id="@+id/dark_mode_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="8dp"
+            android:padding="8dp"
+            android:text="@string/darkmode"
+            android:textColor="@color/text_color_primary"
+            app:drawableEndCompat="@drawable/ic_arrow_right"
+            app:drawableStartCompat="@drawable/ic_dark_mode" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/language_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="32dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardElevation="0dp"
+        app:layout_constraintStart_toStartOf="@+id/dark_mode"
+        app:layout_constraintTop_toBottomOf="@+id/dark_mode">
+
+        <TextView
+            android:id="@+id/language_profile_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="8dp"
+            android:padding="8dp"
+            android:text="@string/language"
+            android:textColor="@color/text_color_primary"
+            app:drawableEndCompat="@drawable/ic_arrow_right"
+            app:drawableStartCompat="@drawable/ic_language" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <View
+        android:id="@+id/simple_line_second"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="32dp"
+        android:background="@color/text_color_primary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/language_profile" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/logout_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="32dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardElevation="0dp"
+        app:layout_constraintStart_toStartOf="@+id/simple_line_second"
+        app:layout_constraintTop_toBottomOf="@+id/simple_line_second">
+
+        <TextView
+            android:id="@+id/logout_profile_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="8dp"
+            android:padding="8dp"
+            android:text="@string/logout"
+            android:textColor="@color/text_color_primary"
+            app:drawableEndCompat="@drawable/ic_arrow_right"
+            app:drawableStartCompat="@drawable/ic_logout" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

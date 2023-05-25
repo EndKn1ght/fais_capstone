@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.bangkit.bangkitcapstone.R
 import com.bangkit.bangkitcapstone.databinding.ActivityLoginBinding
+import com.bangkit.bangkitcapstone.ui.activity.auth.home.HomeActivity
 import com.bangkit.bangkitcapstone.ui.activity.auth.register.RegisterActivity
 
 class LoginActivity : AppCompatActivity() {
@@ -17,11 +18,19 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         goToRegisterPage()
+        login()
     }
 
     private fun goToRegisterPage() {
         binding.registerTextButton.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
+        }
+    }
+
+    private fun login() {
+        binding.loginButton.setOnClickListener {
+            val intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
         }
     }
