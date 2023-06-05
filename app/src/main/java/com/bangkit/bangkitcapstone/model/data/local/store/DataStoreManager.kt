@@ -1,7 +1,7 @@
 package com.bangkit.bangkitcapstone.model.data.local.store
 
 import androidx.datastore.core.DataStore
-import java.util.prefs.Preferences
+import androidx.datastore.preferences.core.Preferences
 
 class DataStoreManager private constructor(private val dataStore: DataStore<Preferences>) {
 

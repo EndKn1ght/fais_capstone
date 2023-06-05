@@ -7,22 +7,31 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.bangkit.bangkitcapstone.ui.fragment.navigation_home"
+        android:name="com.bangkit.bangkitcapstone.ui.fragment.home.DashboardFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_dashboard" />
     <fragment
         android:id="@+id/navigation_recipe"
-        android:name="com.bangkit.bangkitcapstone.ui.fragment.RecipeFragment"
+        android:name="com.bangkit.bangkitcapstone.ui.fragment.home.RecipeFragment"
         android:label="fragment_recipe"
-        tools:layout="@layout/fragment_recipe" />
+        tools:layout="@layout/fragment_recipe" >
+        <action
+            android:id="@+id/action_navigation_recipe_to_foodDetailFragment"
+            app:destination="@id/foodDetailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/navigation_profile"
-        android:name="com.bangkit.bangkitcapstone.ui.fragment.ProfileFragment"
+        android:name="com.bangkit.bangkitcapstone.ui.fragment.home.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/navigation_workout"
-        android:name="com.bangkit.bangkitcapstone.ui.fragment.WorkoutFragment"
+        android:name="com.bangkit.bangkitcapstone.ui.fragment.home.WorkoutFragment"
         android:label="fragment_workout"
         tools:layout="@layout/fragment_workout" />
+    <fragment
+        android:id="@+id/foodDetailFragment"
+        android:name="com.bangkit.bangkitcapstone.ui.fragment.FoodDetailFragment"
+        android:label="fragment_food_detail"
+        tools:layout="@layout/fragment_food_detail" />
 </navigation>

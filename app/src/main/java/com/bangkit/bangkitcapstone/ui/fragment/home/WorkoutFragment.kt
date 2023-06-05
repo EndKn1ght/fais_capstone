@@ -1,4 +1,4 @@
-package com.bangkit.bangkitcapstone.ui.fragment
+package com.bangkit.bangkitcapstone.ui.fragment.home
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

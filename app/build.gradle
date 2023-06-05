@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-kapt'
+    id 'kotlin-parcelize'
     id 'org.jetbrains.kotlin.android'
 }
 
@@ -68,4 +69,14 @@ dependencies {
     //room
     implementation 'androidx.room:room-ktx:2.5.0'
     kapt 'androidx.room:room-compiler:2.5.0'
+
+
+    //any chart
+    implementation 'com.github.AnyChart:AnyChart-Android:1.1.2'
+
+    //pie chart
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+
+    // viewpager
+    implementation "androidx.viewpager2:viewpager2:1.0.0"
 }

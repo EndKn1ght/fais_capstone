@@ -21,9 +21,25 @@
     <string name="language">Language</string>
     <string name="logout">Logout</string>
     <string name="username_placeholder">Jhon Doe</string>
+    <string name="food_name_placeholder">Nasi Goreng</string>
     <string name="email_placeholder">jhondoe123@dummy.com</string>
     <string name="recipes_item_image">Recipes Image List</string>
     <string name="bookmark_icon_desc">Bookmark Icon</string>
-        <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="action_add_button">Floating Action Button</string>
+    <string name="dashboard_profile_picture">Dashboard Profile Picture</string>
+    <string name="dashboard_username">Jhon</string>
+    <string name="caloreis">Calories</string>
+    <string name="water">Water</string>
+    <string name="calories_count">%s%%</string>
+    <string name="waters_count">%s%%</string>
+    <string name="details">Details :</string>
+    <string name="carbohydrate">Carbohydrate</string>
+    <string name="protein">Protein</string>
+    <string name="fat">Fat</string>
+    <string name="macronutrients">Macronutrients</string>
+    <string name="micronutrients">Micronutrients</string>
+    <string name="empty_string" />
+    <string name="food_detail_image">Food Detail Image</string>
+    <string name="back_detail_button">Back Detail Button</string>
+    <string name="bookmark_detail_icon">Bookmark Detail Icon</string>
 </resources>
