@@ -9,7 +9,11 @@
         android:id="@+id/navigation_home"
         android:name="com.bangkit.bangkitcapstone.ui.fragment.home.DashboardFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_dashboard" >
+        <action
+            android:id="@+id/action_navigation_home_to_caloriesFragment"
+            app:destination="@id/caloriesFragment" />
+    </fragment>
     <fragment
         android:id="@+id/navigation_recipe"
         android:name="com.bangkit.bangkitcapstone.ui.fragment.home.RecipeFragment"
@@ -31,7 +35,12 @@
         tools:layout="@layout/fragment_workout" />
     <fragment
         android:id="@+id/foodDetailFragment"
-        android:name="com.bangkit.bangkitcapstone.ui.fragment.FoodDetailFragment"
+        android:name="com.bangkit.bangkitcapstone.ui.fragment.detail.FoodDetailFragment"
         android:label="fragment_food_detail"
         tools:layout="@layout/fragment_food_detail" />
+    <fragment
+        android:id="@+id/caloriesFragment"
+        android:name="com.bangkit.bangkitcapstone.ui.fragment.detail.CaloriesFragment"
+        android:label="fragment_calories"
+        tools:layout="@layout/fragment_calories" />
 </navigation>

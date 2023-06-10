@@ -1,100 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.fragment.home.DashboardFragment">
 
-    <ImageView
-        android:id="@+id/dashboard_profile_picture"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:contentDescription="@string/dashboard_profile_picture"
-        android:src="@drawable/ic_person"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/welcome_back_dashboard_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="@string/welcome_back_login"
-        android:textColor="@color/text_color_primary"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/dashboard_profile_picture"
-        app:layout_constraintTop_toTopOf="@+id/dashboard_profile_picture" />
+        <ImageView
+            android:id="@+id/dashboard_profile_picture"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:contentDescription="@string/dashboard_profile_picture"
+            android:src="@drawable/ic_person"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="@string/dashboard_username"
-        android:textColor="@color/text_color_primary"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/dashboard_profile_picture"
-        app:layout_constraintTop_toBottomOf="@+id/welcome_back_dashboard_tv" />
+        <TextView
+            android:id="@+id/welcome_back_dashboard_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/welcome_back_login"
+            android:textColor="@color/text_color_primary"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/dashboard_profile_picture"
+            app:layout_constraintTop_toTopOf="@+id/dashboard_profile_picture" />
 
-    <TextClock
-        android:id="@+id/dashboard_clock"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        android:format12Hour="hh:mm:ss a"
-        android:format24Hour="HH:mm:ss"
-        android:textColor="@color/text_color_primary"
-        android:textSize="26sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="@tools:sample/date/hhmm" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/dashboard_username"
+            android:textColor="@color/text_color_primary"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/dashboard_profile_picture"
+            app:layout_constraintTop_toBottomOf="@+id/welcome_back_dashboard_tv" />
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/calories_cardview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:backgroundTint="@color/background"
-        android:clickable="true"
-        android:focusable="true"
-        app:layout_constraintEnd_toStartOf="@+id/water_cardview"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dashboard_profile_picture">
+        <TextClock
+            android:id="@+id/dashboard_clock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="32dp"
+            android:format12Hour="hh:mm:ss a"
+            android:format24Hour="HH:mm:ss"
+            android:textColor="@color/text_color_primary"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@tools:sample/date/hhmm" />
 
-        <LinearLayout
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/calories_cardview"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:layout_margin="32dp"
+            android:backgroundTint="@color/background"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dashboard_profile_picture">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:padding="8dp"
-                android:text="@string/caloreis"
-                android:textAlignment="viewStart"
-                android:textColor="@color/orange_dark"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:drawableEndCompat="@drawable/ic_food" />
-
-            <FrameLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginStart="18dp"
-                android:layout_marginEnd="18dp"
-                android:layout_marginBottom="18dp">
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/calories_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:text="@string/caloreis"
+                    android:textColor="@color/orange_dark"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
 
                 <com.mikhaellopez.circularprogressbar.CircularProgressBar
                     android:id="@+id/calories_progress_circular"
                     android:layout_width="112dp"
                     android:layout_height="112dp"
+                    android:layout_margin="12dp"
                     app:cpb_background_progressbar_color="@color/orange_light"
                     app:cpb_background_progressbar_width="12dp"
                     app:cpb_progress="80"
@@ -102,61 +101,85 @@
                     app:cpb_progress_max="100"
                     app:cpb_progressbar_color="@color/orange_dark"
                     app:cpb_progressbar_width="12dp"
-                    app:cpb_round_border="true" />
+                    app:cpb_round_border="true"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/calories_tv" />
+
+                <ImageView
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:contentDescription="@string/calories_icon"
+                    android:src="@drawable/ic_fire"
+                    app:layout_constraintBottom_toBottomOf="@+id/calories_progress_circular"
+                    app:layout_constraintEnd_toEndOf="@+id/calories_progress_circular"
+                    app:layout_constraintStart_toStartOf="@+id/calories_progress_circular"
+                    app:layout_constraintTop_toTopOf="@+id/calories_progress_circular"
+                    app:tint="@color/orange" />
 
                 <TextView
                     android:id="@+id/calories_progress_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:layout_marginTop="8dp"
                     android:text="@string/calories_count"
                     android:textColor="@color/text_color_primary"
                     android:textSize="16sp"
-                    android:textStyle="bold" />
-            </FrameLayout>
-        </LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/calories_per_day"
+                    app:layout_constraintTop_toBottomOf="@+id/calories_per_day" />
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/water_cardview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:clickable="true"
-        android:focusable="true"
-        app:cardBackgroundColor="@color/background"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/calories_cardview"
-        app:layout_constraintTop_toBottomOf="@+id/dashboard_profile_picture">
+                <TextView
+                    android:id="@+id/calories_per_day"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/calories_need_per_day"
+                    android:textColor="@color/orange"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/calories_progress_circular"
+                    app:layout_constraintTop_toTopOf="@+id/calories_progress_circular" />
 
-        <LinearLayout
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/water_cardview"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:layout_margin="32dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardBackgroundColor="@color/background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/calories_cardview">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:padding="8dp"
-                android:text="@string/water"
-                android:textAlignment="viewStart"
-                android:textColor="@color/blue_dark"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:drawableEndCompat="@drawable/ic_water" />
-
-            <FrameLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginStart="18dp"
-                android:layout_marginEnd="18dp"
-                android:layout_marginBottom="18dp">
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/water_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:text="@string/water"
+                    android:textColor="@color/blue_dark"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <com.mikhaellopez.circularprogressbar.CircularProgressBar
                     android:id="@+id/water_progress_circular"
                     android:layout_width="112dp"
                     android:layout_height="112dp"
+                    android:layout_margin="12dp"
                     app:cpb_background_progressbar_color="@color/blue_light"
                     app:cpb_background_progressbar_width="12dp"
                     app:cpb_progress="10"
@@ -164,32 +187,52 @@
                     app:cpb_progress_max="100"
                     app:cpb_progressbar_color="@color/blue_dark"
                     app:cpb_progressbar_width="12dp"
-                    app:cpb_round_border="true" />
+                    app:cpb_round_border="true"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/water_tv" />
+
+                <ImageView
+                    android:id="@+id/water_icon"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:contentDescription="@string/water_icon"
+                    android:src="@drawable/ic_water"
+                    app:layout_constraintBottom_toBottomOf="@+id/water_progress_circular"
+                    app:layout_constraintEnd_toEndOf="@+id/water_progress_circular"
+                    app:layout_constraintStart_toStartOf="@+id/water_progress_circular"
+                    app:layout_constraintTop_toTopOf="@+id/water_progress_circular"
+                    app:tint="@color/blue" />
+
+                <TextView
+                    android:id="@+id/water_per_day"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/water_need_per_day"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/water_progress_circular"
+                    app:layout_constraintTop_toTopOf="@+id/water_progress_circular" />
 
                 <TextView
                     android:id="@+id/water_progress_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="@string/calories_count"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/waters_count"
                     android:textColor="@color/text_color_primary"
                     android:textSize="16sp"
-                    android:textStyle="bold" />
-            </FrameLayout>
-        </LinearLayout>
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/water_per_day"
+                    app:layout_constraintTop_toBottomOf="@+id/water_per_day" />
 
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </com.google.android.material.card.MaterialCardView>
+        </com.google.android.material.card.MaterialCardView>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/action_add_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="32dp"
-        android:contentDescription="@string/action_add_button"
-        android:src="@drawable/ic_food"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

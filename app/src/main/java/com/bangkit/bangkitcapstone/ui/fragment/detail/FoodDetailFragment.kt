@@ -1,4 +1,4 @@
-package com.bangkit.bangkitcapstone.ui.fragment
+package com.bangkit.bangkitcapstone.ui.fragment.detail
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,6 +11,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.bangkit.bangkitcapstone.R
 import com.bangkit.bangkitcapstone.databinding.FragmentFoodDetailBinding
+import com.bangkit.bangkitcapstone.model.data.remote.response.DummyData
 import com.bangkit.bangkitcapstone.ui.adapter.SectionChartAdapter
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
@@ -32,6 +33,7 @@ class FoodDetailFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.foodDetailImage.setImageResource(R.drawable.dummy_image)
+        binding.foodDetailDesc.text = DummyData.food[0].foodDesc
 
         binding.backButtonDetail.setOnClickListener {
             findNavController().popBackStack()

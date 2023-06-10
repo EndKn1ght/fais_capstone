@@ -28,10 +28,16 @@ class HomeActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
-            if (destination.id == R.id.foodDetailFragment) {
-                navView.visibility = View.GONE
-            } else {
-                navView.visibility = View.VISIBLE
+            when (destination.id) {
+                R.id.foodDetailFragment -> {
+                    navView.visibility = View.GONE
+                }
+                R.id.caloriesFragment -> {
+                    navView.visibility = View.GONE
+                }
+                else -> {
+                    navView.visibility = View.VISIBLE
+                }
             }
         }
     }

@@ -18,6 +18,7 @@ class CustomEditText : AppCompatEditText, View.OnTouchListener {
     private lateinit var clearButtonImage: Drawable
     private lateinit var iconDrawable: Drawable
     private var isEmail: Boolean = false
+    private var hintEditText: String? = null
 
     constructor(context: Context) : super(context) {
         init(context, null)
@@ -41,7 +42,7 @@ class CustomEditText : AppCompatEditText, View.OnTouchListener {
         setBackgroundResource(R.drawable.rounded_edittext_bg)
         val ta = context.obtainStyledAttributes(attrs, R.styleable.IconEditText)
         iconDrawable = ta.getDrawable(R.styleable.IconEditText_drawableIcon)!!
-        isEmail = ta.getBoolean(R.styleable.IconEditText_isEmail, false)
+        hintEditText = ta.getString(R.styleable.IconEditText_hint)
         ta.recycle()
 
         setOnTouchListener(this)
@@ -92,8 +93,7 @@ class CustomEditText : AppCompatEditText, View.OnTouchListener {
 
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
-        hint =
-            if (isEmail) resources.getString(R.string.email_hint) else resources.getString(R.string.username_hint)
+        hint = hintEditText
         textAlignment = View.TEXT_ALIGNMENT_VIEW_START
     }
 

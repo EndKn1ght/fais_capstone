@@ -79,4 +79,10 @@ dependencies {
 
     // viewpager
     implementation "androidx.viewpager2:viewpager2:1.0.0"
+
+    // coroutine support
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.5.1"
+    implementation 'androidx.activity:activity-ktx:1.6.1'
+    implementation "androidx.fragment:fragment-ktx:1.5.5"
 }

@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragment.detail.CaloriesFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_calories"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/calories_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/back_button"
+                android:src="@drawable/ic_arrow_left" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/calories_intake"
+                android:textColor="@color/text_color_primary"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <TextView
+            android:id="@+id/select_genders_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="32dp"
+            android:text="@string/select_genders"
+            android:textColor="@color/text_color_primary"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar_calories" />
+
+        <RadioGroup
+            android:id="@+id/calories_radio_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="fill"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="@+id/select_genders_hint"
+            app:layout_constraintTop_toBottomOf="@+id/select_genders_hint">
+
+            <RadioButton
+                android:id="@+id/male_radio_button"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/male_background_selector"
+                android:button="@color/transparent"
+                android:checked="true"
+                android:drawableTop="@drawable/ic_male"
+                android:padding="8dp"
+                android:text="@string/male"
+                android:textAlignment="center"
+                android:textColor="@color/male_text_selector"
+                app:drawableTint="@color/male_text_selector" />
+
+            <RadioButton
+                android:id="@+id/female_radio_button"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/female_background_selector"
+                android:button="@color/transparent"
+                android:drawableTop="@drawable/ic_female"
+                android:padding="8dp"
+                android:text="@string/female"
+                android:textAlignment="center"
+                android:textColor="@color/female_text_selector"
+                app:drawableTint="@color/female_text_selector" />
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/height_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="32dp"
+            android:text="@string/input_your_height_cm"
+            android:textColor="@color/text_color_primary"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/calories_radio_group" />
+
+        <com.bangkit.bangkitcapstone.ui.custom.CustomEditText
+            android:id="@+id/height_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:drawablePadding="8dp"
+            android:inputType="number"
+            android:padding="8dp"
+            app:drawableIcon="@drawable/ic_height"
+            app:hint="@string/height"
+            app:layout_constraintStart_toStartOf="@+id/height_hint"
+            app:layout_constraintTop_toBottomOf="@+id/height_hint" />
+
+        <TextView
+            android:id="@+id/weight_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="32dp"
+            android:text="@string/input_your_weight_kg"
+            android:textColor="@color/text_color_primary"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/height_input" />
+
+        <com.bangkit.bangkitcapstone.ui.custom.CustomEditText
+            android:id="@+id/weight_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:drawablePadding="8dp"
+            android:inputType="number"
+            android:padding="8dp"
+            app:drawableIcon="@drawable/ic_scale"
+            app:hint="@string/weight"
+            app:layout_constraintStart_toStartOf="@+id/weight_hint"
+            app:layout_constraintTop_toBottomOf="@+id/weight_hint" />
+
+        <TextView
+            android:id="@+id/age_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="32dp"
+            android:text="@string/input_your_age_year"
+            android:textColor="@color/text_color_primary"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/weight_input" />
+
+        <com.bangkit.bangkitcapstone.ui.custom.CustomEditText
+            android:id="@+id/age_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:drawablePadding="8dp"
+            android:inputType="number"
+            android:padding="8dp"
+            app:drawableIcon="@drawable/ic_calendar"
+            app:hint="@string/age"
+            app:layout_constraintStart_toStartOf="@+id/age_hint"
+            app:layout_constraintTop_toBottomOf="@+id/age_hint" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/activity_spinner_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="32dp"
+            android:hint="@string/activity_level"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/age_input"
+            app:startIconDrawable="@drawable/ic_dumbbell">
+
+            <AutoCompleteTextView
+                android:id="@+id/autoCompleteTextView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="none"
+                android:text="@string/option"
+                tools:ignore="LabelFor" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/calories_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:text="@string/calculate"
+            app:layout_constraintTop_toBottomOf="@id/activity_spinner_layout" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

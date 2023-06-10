@@ -2,7 +2,7 @@
 <resources>
     <declare-styleable name="IconEditText">
         <attr name="drawableIcon" format="reference" />
-        <attr name="isEmail" format="boolean" />
+        <attr name="hint" format="string" />
     </declare-styleable>
 
     <declare-styleable name="AppWidgetAttrs">

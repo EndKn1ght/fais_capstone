@@ -13,6 +13,7 @@
     <color name="text_color_variant">@color/white</color>
     <color name="orange_light">#FDAC92</color>
     <color name="orange_dark">#FF6E40</color>
+    <color name="orange">#FF3D00</color>
     <color name="blue_light">#C6D7EB</color>
     <color name="blue_dark">#1868AE</color>
     <color name="background">#F5F5F5</color>
@@ -21,4 +22,8 @@
     <color name="teal">#088395</color>
     <color name="blue">#05BFDB</color>
     <color name="mint">#00FFCA</color>
+    <color name="pink">#EF31B9</color>
+
+
+    <color name="transparent">#00FFFFFF</color>
 </resources>

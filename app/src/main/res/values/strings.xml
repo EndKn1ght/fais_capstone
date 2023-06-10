@@ -30,8 +30,8 @@
     <string name="dashboard_username">Jhon</string>
     <string name="caloreis">Calories</string>
     <string name="water">Water</string>
-    <string name="calories_count">%s%%</string>
-    <string name="waters_count">%s%%</string>
+    <string name="calories_count">%s / %s</string>
+    <string name="waters_count">%s / %s</string>
     <string name="details">Details :</string>
     <string name="carbohydrate">Carbohydrate</string>
     <string name="protein">Protein</string>
@@ -40,6 +40,36 @@
     <string name="micronutrients">Micronutrients</string>
     <string name="empty_string" />
     <string name="food_detail_image">Food Detail Image</string>
-    <string name="back_detail_button">Back Detail Button</string>
+    <string name="back_button">Back Button</string>
     <string name="bookmark_detail_icon">Bookmark Detail Icon</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="calories_intake">Calories Intake</string>
+    <string name="select_genders">Select Genders</string>
+    <string name="female_option_button">Female Option Button</string>
+    <string name="male_option_button">Male Option Button</string>
+    <string name="input_your_height_cm">Input Your Height (CM)</string>
+    <string name="input_your_weight_kg">Input Your Weight (Kg)</string>
+    <string name="input_your_age_year">Input Your Age (Year)</string>
+    <string name="weight">Weight…</string>
+    <string name="height">Height…</string>
+    <string name="age">Age…</string>
+    <string name="activities">Activities</string>
+    <string name="calculate">calculate</string>
+    <string name="activity_level">Activity Level</string>
+    <string name="option">Option</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="water_icon">Water Icon</string>
+    <string name="calories_icon">Calories Icon</string>
+    <string name="calories_need_per_day">Calories Need Per Day</string>
+    <string name="water_need_per_day">Water Need Per Day</string>
+
+    <string-array name="activity">
+        <item>Sedentary</item>
+        <item>Lightly Active</item>
+        <item>Moderately Active</item>
+        <item>Very Active</item>
+        <item>Extra Active</item>
+    </string-array>
 </resources>

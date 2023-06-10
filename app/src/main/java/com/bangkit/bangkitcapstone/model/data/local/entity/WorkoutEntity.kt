@@ -8,22 +8,19 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 @Entity
-class FoodEntity(
+class WorkoutEntity(
 
     @ColumnInfo(name = "id")
     @PrimaryKey
     val id: Int,
 
-    @ColumnInfo(name = "foodName")
-    val foodName: String,
+    @ColumnInfo(name = "workoutName")
+    val workoutName: String,
 
-    @ColumnInfo(name = "foodRecipe")
-    val foodRecipe: String,
+    @ColumnInfo(name = "workoutDesc")
+    val workoutDesc: String,
 
-    @ColumnInfo(name = "foodDesc")
-    val foodDesc: String,
-
-    @ColumnInfo(name = "foodCal")
-    val foodCal: String,
+    @ColumnInfo(name = "workoutCal")
+    val workoutCal: String,
 
 ) : Parcelable

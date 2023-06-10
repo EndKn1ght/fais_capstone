@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bangkit.bangkitcapstone.R
-import com.bangkit.bangkitcapstone.databinding.RecipesItemBinding
+import com.bangkit.bangkitcapstone.databinding.ItemListBinding
 import com.bangkit.bangkitcapstone.model.data.local.entity.FoodEntity
 
 class RecipeListAdapter(
@@ -16,18 +16,18 @@ class RecipeListAdapter(
     DIFF_CALLBACK
 ) {
 
-    class ListRecipeViewHolder(val binding: RecipesItemBinding) :
+    class ListRecipeViewHolder(val binding: ItemListBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(recipe: FoodEntity) {
-            binding.recipeImage.setImageResource(R.drawable.dummy_image)
-            binding.recipeName.text = recipe.foodName
-            binding.recipeDesc.text = recipe.foodDesc
-            binding.recipeCalItem.text = recipe.foodCal
+            binding.itemImage.setImageResource(R.drawable.dummy_image)
+            binding.itemName.text = recipe.foodName
+            binding.itemDesc.text = recipe.foodDesc
+            binding.itemCalories.text = recipe.foodCal
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListRecipeViewHolder {
-        val binding = RecipesItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding = ItemListBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ListRecipeViewHolder(binding)
     }
 

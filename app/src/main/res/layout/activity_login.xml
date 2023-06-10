@@ -49,7 +49,7 @@
         android:drawablePadding="8dp"
         android:padding="8dp"
         app:drawableIcon="@drawable/ic_email"
-        app:isEmail="true"
+        app:hint="Email..."
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
