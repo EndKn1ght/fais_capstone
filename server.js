@@ -1,5 +1,4 @@
 const Hapi = require("@hapi/hapi");
-const jwt = require("@hapi/jwt");
 const sequelize = require("./database");
 const usersRoutes = require("./routes/usersRoutes");
 // const workoutNamesRoutes = require('./routes/workoutNamesRoutes');

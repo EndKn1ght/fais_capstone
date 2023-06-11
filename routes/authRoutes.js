@@ -2,11 +2,6 @@ const Auth = require('../controllers/authController');
 
 const authRoutes = [
   {
-    method: 'POST',
-    path: '/auth',
-    handler: Auth.createAuth,
-  },
-  {
     method: 'GET',
     path: '/auth/{token}',
     handler: Auth.getAuthByToken,
@@ -16,6 +11,11 @@ const authRoutes = [
     path: '/auth/{token}',
     handler: Auth.deleteAuth,
   },
+  {
+    method: 'POST',
+    path: '/login',
+    handler: Auth.login,
+  }
 ];
 
 module.exports = authRoutes;
