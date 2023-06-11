@@ -15,7 +15,7 @@ const Auth = sequelize.define("Auth", {
       key: "user_id",
     },
     onDelete: "CASCADE",
-    onUpdate: 'CASCADE',
+    onUpdate: "CASCADE",
   },
   expiration_date: {
     type: DataTypes.DATE,

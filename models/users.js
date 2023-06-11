@@ -6,16 +6,16 @@ const User = sequelize.define("User", {
     type: DataTypes.INTEGER,
     primaryKey: true,
     autoIncrement: true,
-    allowNull: false
+    allowNull: false,
   },
   username: {
     type: DataTypes.STRING,
     unique: true,
-    allowNull: false
+    allowNull: false,
   },
   password: {
     type: DataTypes.STRING,
-    allowNull: false
+    allowNull: false,
   },
   email: {
     type: DataTypes.STRING,
@@ -26,15 +26,15 @@ const User = sequelize.define("User", {
   },
   date_of_birth: {
     type: DataTypes.DATE,
-    allowNull: false
+    allowNull: false,
   },
   height: {
     type: DataTypes.DECIMAL(5, 2),
-    allowNull: false
+    allowNull: false,
   },
   weight: {
     type: DataTypes.DECIMAL(5, 2),
-    allowNull: false
+    allowNull: false,
   },
 });
 
