@@ -1,7 +1,7 @@
 const Hapi = require("@hapi/hapi");
 const sequelize = require("./database");
 const usersRoutes = require("./routes/usersRoutes");
-// const workoutNamesRoutes = require('./routes/workoutNamesRoutes');
+const workoutNamesRoutes = require('./routes/workoutNamesRoutes');
 // const userWorkoutHistoryRoutes = require('./routes/userWorkoutHistoryRoutes');
 // const calorieIntakeRoutes = require('./routes/calorieIntakeRoutes');
 const authRoutes = require("./routes/authRoutes");
@@ -14,7 +14,7 @@ const init = async () => {
 
   await sequelize.sync();
 
-  server.route([...usersRoutes, ...authRoutes]);
+  server.route([...usersRoutes, ...authRoutes, ...workoutNamesRoutes]);
 
   await server.start();
   console.log("Server running on %s", server.info.uri);
