@@ -33,7 +33,7 @@ const login = async (request, h) => {
     };
   } catch (error) {
     console.error(error);
-    return h.response('Error logging in').code(500);
+    return h.response({message: 'Error logging in'}).code(500);
   }
 };
 
