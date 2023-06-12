@@ -3,9 +3,9 @@ const sequelize = require("../database");
 
 const WorkoutName = sequelize.define("WorkoutName", {
   workout_id: {
-    type: DataTypes.INTEGER,
+    type: DataTypes.STRING(4),
     primaryKey: true,
-    autoIncrement: true,
+    allowNull: false,
   },
   workout_name: {
     type: DataTypes.STRING,
@@ -13,9 +13,24 @@ const WorkoutName = sequelize.define("WorkoutName", {
     unique: true,
   },
   description: {
+    type: DataTypes.TEXT,
+    allowNull: false,
+  },
+  type: {
     type: DataTypes.STRING,
     allowNull: false,
-    unique: true,
+  },
+  body_part: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  equipment: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  level: {
+    type: DataTypes.STRING,
+    allowNull: false,
   },
 });
 

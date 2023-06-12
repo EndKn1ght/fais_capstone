@@ -28,10 +28,15 @@ const getWorkoutNameById = async (request, h) => {
 
 const createWorkoutName = async (request, h) => {
   try {
-    const { name, description } = request.payload;
+    const { name, description, type, body_part, equipment, level } =
+      request.payload;
     const workoutName = await WorkoutName.create({
       workout_name: name,
       description,
+      type,
+      body_part,
+      equipment,
+      level,
     });
     return workoutName;
   } catch (error) {

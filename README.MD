@@ -1,3 +1,8 @@
+## How to Deploy
+1. Create a copy of .env.example, rename it to .env and fill it accordingly
+2. `npm run start`
+3. `node data\seeders\workoutName.js`
+
 ## Auth Routes
 
 | Method | Path               | Description             |
