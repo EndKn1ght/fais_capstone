@@ -11,7 +11,7 @@
 | POST   | /login                | User login                  | `{ "username": string, "password": string }`                                                                               |
 | POST   | /register                | User Register               | `{ "username": string, "password": string, "email": string, "date_of_birth": string, "height": number, "weight": number }` |
 | POST   | /users/calorieIntake/{token}  | Create calorie intake       | `{ "token": string, "intake_date": string, "meal_description": string, "calories_consumed": number }`                      |
-| POST   | /users/workoutHistory/{token} | Create user workout history | `{ "token": string, "workout_id": number, "workout_date": string, "duration_minutes": number, "calories_burned": number }` |
+| POST   | /users/workoutHistory/{token} | Create user workout history | `{ "workout_id": string, "workout_date": string, "duration_minutes": number, "calories_burned": number }` |
 | POST   | /workouts             | Create workout name         | `{ "name": string, "description": string, "type": string, "body_part": string, "equipment": string, "level": string }`     |
 
 ## Auth Routes
