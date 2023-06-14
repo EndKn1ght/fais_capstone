@@ -15,7 +15,7 @@ const UserWorkoutHistory = sequelize.define("UserWorkoutHistory", {
     allowNull: false,
   },
   workout_id: {
-    type: DataTypes.TEXT,
+    type: DataTypes.STRING(4),
     allowNull: false,
   },
   workout_date: {
