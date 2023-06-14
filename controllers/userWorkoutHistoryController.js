@@ -1,5 +1,5 @@
 const UserWorkoutHistory = require("../models/userWorkoutHistory");
-const User = require("../models/user");
+const User = require("../models/users");
 const Auth = require("../models/auth");
 
 const getUserWorkoutHistoryByUserId = async (request, h) => {
