@@ -2,14 +2,13 @@ const Hapi = require("@hapi/hapi");
 const sequelize = require("./database");
 const usersRoutes = require("./routes/usersRoutes");
 const workoutNamesRoutes = require("./routes/workoutNamesRoutes");
-// const userWorkoutHistoryRoutes = require('./routes/userWorkoutHistoryRoutes');
+const userWorkoutHistoryRoutes = require('./routes/userWorkoutHistoryRoutes');
 const calorieIntakeRoutes = require("./routes/calorieIntakeRoutes");
 const authRoutes = require("./routes/authRoutes");
 
 const init = async () => {
   const server = Hapi.server({
     port: 3000,
-    host: "localhost",
   });
 
   await sequelize.sync();
@@ -19,6 +18,7 @@ const init = async () => {
     ...authRoutes,
     ...workoutNamesRoutes,
     ...calorieIntakeRoutes,
+    ...userWorkoutHistoryRoutes
   ]);
 
   await server.start();
