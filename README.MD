@@ -6,13 +6,14 @@
 
 ## Post Requests Body
 
-| Method | Path                  | Description                 | Request Body                                                                                                               |
-| ------ | --------------------- | --------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| POST   | /login                | User login                  | `{ "username": string, "password": string }`                                                                               |
-| POST   | /register                | User Register               | `{ "username": string, "password": string, "email": string, "date_of_birth": string, "height": number, "weight": number }` |
+| Method | Path                          | Description                 | Request Body                                                                                                               |
+| ------ | ----------------------------- | --------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| POST   | /login                        | User login                  | `{ "username": string, "password": string }`                                                                               |
+| POST   | /register                     | User Register               | `{ "username": string, "password": string, "email": string, "date_of_birth": string, "height": number, "weight": number }` |
 | POST   | /users/calorieIntake/{token}  | Create calorie intake       | `{ "token": string, "intake_date": string, "meal_description": string, "calories_consumed": number }`                      |
-| POST   | /users/workoutHistory/{token} | Create user workout history | `{ "workout_id": string, "workout_date": string, "duration_minutes": number, "calories_burned": number }` |
-| POST   | /workouts             | Create workout name         | `{ "name": string, "description": string, "type": string, "body_part": string, "equipment": string, "level": string }`     |
+| POST   | /users/workoutHistory/{token} | Create user workout history | `{ "workout_id": string, "workout_date": string, "duration_minutes": number, "calories_burned": number }`                  |
+| POST   | /workouts                     | Create workout name         | `{ "name": string, "description": string, "type": string, "body_part": string, "equipment": string, "level": string }`     |
+| POST   | /recipe                       | Get recipes using URI       | ` { "uri": string }`                                                                                                       |
 
 ## Auth Routes
 
@@ -62,12 +63,12 @@
 | PUT    | /workout/{id} | Update workout name    |
 | DELETE | /workout/{id} | Delete workout name    |
 
-
 ## Recipe Routes
-| Method | Path                | Description               |
-|--------|---------------------|---------------------------|
-| GET    | /recipes            | Get random recipes        |
-| GET    | /recipes/{query}    | Get recipes by query      |
-| GET    | /recipe/{uri}       | Get recipes using URI     |
+
+| Method | Path             | Description           |
+| ------ | ---------------- | --------------------- |
+| GET    | /recipes         | Get random recipes    |
+| GET    | /recipes/{query} | Get recipes by query  |
+| POST   | /recipe          | Get recipes using URI |
 
 The result example can be seen [HERE](https://developer.edamam.com/edamam-docs-recipe-api#/)

@@ -60,16 +60,17 @@ const getRecipes = async (request, h) => {
 
 const getRecipesUsingUri = async (request, h) => {
   try {
-    const { uri } = request.params;
+    const { uri } = request.payload;
     const appId = process.env.EDAMAM_APP;
     const appKey = process.env.EDAMAM_KEY;
 
     // Set up the API endpoint and parameters
-    const apiUrl = `https://api.edamam.com/api/recipes/v2/${uri}`;
+    const apiUrl = `https://api.edamam.com/api/recipes/v2/by-uri`;
     const queryParams = {
       app_id: appId,
       app_key: appKey,
       type: "public",
+      uri: uri,
     };
 
     // Make the API request

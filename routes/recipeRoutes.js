@@ -12,8 +12,8 @@ const recipeRoutes = [
     handler: recipeController.getRecipes,
   },
   {
-    method: "GET",
-    path: "/recipe/{uri}",
+    method: "POST",
+    path: "/recipe",
     handler: recipeController.getRecipesUsingUri,
   },
 ];
