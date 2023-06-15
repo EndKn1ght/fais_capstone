@@ -53,7 +53,7 @@ const getAuthByToken = async (request, h) => {
     }
     return auth;
   } catch (error) {
-    return h.response("Error").code(500);
+    return h.response({ message: "Error" }).code(500);
   }
 };
 
@@ -70,7 +70,7 @@ const deleteAuth = async (request, h) => {
     await auth.destroy();
     return h.response({ message: "Token successfully deleted" }).code(202);
   } catch (error) {
-    return h.response("Error").code(500);
+    return h.response({ message: "Error" }).code(500);
   }
 };
 

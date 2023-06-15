@@ -61,3 +61,13 @@
 | POST   | /workout      | Create workout name    |
 | PUT    | /workout/{id} | Update workout name    |
 | DELETE | /workout/{id} | Delete workout name    |
+
+
+## Recipe Routes
+| Method | Path                | Description               |
+|--------|---------------------|---------------------------|
+| GET    | /recipes            | Get random recipes        |
+| GET    | /recipes/{query}    | Get recipes by query      |
+| GET    | /recipe/{uri}       | Get recipes using URI     |
+
+The result example can be seen [HERE](https://developer.edamam.com/edamam-docs-recipe-api#/)

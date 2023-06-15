@@ -5,6 +5,7 @@ const workoutNamesRoutes = require("./routes/workoutNamesRoutes");
 const userWorkoutHistoryRoutes = require('./routes/userWorkoutHistoryRoutes');
 const calorieIntakeRoutes = require("./routes/calorieIntakeRoutes");
 const authRoutes = require("./routes/authRoutes");
+const recipeRoutes = require("./routes/recipeRoutes");
 
 const init = async () => {
   const server = Hapi.server({
@@ -18,7 +19,8 @@ const init = async () => {
     ...authRoutes,
     ...workoutNamesRoutes,
     ...calorieIntakeRoutes,
-    ...userWorkoutHistoryRoutes
+    ...userWorkoutHistoryRoutes,
+    ...recipeRoutes
   ]);
 
   await server.start();
