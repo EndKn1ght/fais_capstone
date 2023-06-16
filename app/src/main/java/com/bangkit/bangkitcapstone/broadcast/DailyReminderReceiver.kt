@@ -13,7 +13,6 @@ import com.bangkit.bangkitcapstone.ui.activity.splash.MainActivity
 
 class DailyReminderReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {
-        // Create and send the notification
         val notification = buildNotification(context)
         val notificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         notificationManager.notify(NOTIFICATION_ID, notification)

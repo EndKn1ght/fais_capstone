@@ -50,9 +50,6 @@ class WorkoutIntakeFragment : Fragment() {
             val names: List<String> = data.map { dailyEntity -> dailyEntity.name }
             val arrayAdapter = ArrayAdapter(requireContext(), R.layout.drop_item_options, names)
             binding.wokroutAutoComplete.setAdapter(arrayAdapter)
-            /*binding.wokroutAutoComplete.text = Editable.Factory.getInstance().newEditable(name)
-            binding.workoutTimeInput.text = Editable.Factory.getInstance().newEditable(time.toString())
-            binding.workoutMetInput.text = Editable.Factory.getInstance().newEditable(met)*/
         }
 
         binding.caluculateWorkout.setOnClickListener {

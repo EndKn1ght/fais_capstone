@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
@@ -51,10 +52,11 @@ class DairyIntakeFragment : Fragment() {
                     when (it) {
                         is UiState.Loading -> {}
                         is UiState.Success -> {
-                            Log.e("PAIN", "${it.data}")
+                            Toast.makeText(requireContext(), "Success", Toast.LENGTH_SHORT).show()
+                            findNavController().popBackStack()
                         }
                         is UiState.Error -> {
-                            Log.e("PAIN", it.error)
+                            Toast.makeText(requireContext(), it.error, Toast.LENGTH_SHORT).show()
                         }
                     }
                 }
@@ -65,10 +67,11 @@ class DairyIntakeFragment : Fragment() {
                     when (it) {
                         is UiState.Loading -> {}
                         is UiState.Success -> {
-                            Log.e("PAIN", "${it.data}")
+                            Toast.makeText(requireContext(), "Success", Toast.LENGTH_SHORT).show()
+                            findNavController().popBackStack()
                         }
                         is UiState.Error -> {
-                            Log.e("PAIN", it.error)
+                            Toast.makeText(requireContext(), it.error, Toast.LENGTH_SHORT).show()
                         }
                     }
                 }

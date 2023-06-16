@@ -73,26 +73,11 @@ class FoodDetailFragment : Fragment() {
         binding.foodDetailCal.text = data.foodCal
         binding.foodDetailHealth.text = data.foodHealth.joinToString(" ")
 
-        /*val regex = """(\w+)=(\w+)\(unit=([\wµ]+), quantity=([\d.]+), label=(.*)\)""".toRegex()
-
-        val matches = regex.findAll(data.foodNutrition)
-        matches.forEach { matchResult ->
-            val nutrientName = matchResult.groupValues[0]
-            val unit = matchResult.groupValues[1]
-            val quantity = matchResult.groupValues[2]
-            val label = matchResult.groupValues[3]
-            Log.e("Nutrient", nutrientName)
-            Log.e("Unit", unit)
-            Log.e("Quantity", quantity)
-            Log.e("Label", label)
-        }*/
-
         binding.eatButton.setOnClickListener {
             viewModel.insertFood(data.foodName, data.foodCal).observe(viewLifecycleOwner) {
                 when (it) {
                     is UiState.Loading -> {}
                     is UiState.Success -> {
-
                         findNavController().popBackStack()
                     }
                     is UiState.Error -> {
