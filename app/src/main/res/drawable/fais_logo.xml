@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="1080"
+    android:viewportHeight="1080">
+
+    <path
+        android:fillColor="?attr/colorOnPrimary"
+        android:pathData="M455.08,389.64h125.44l-5.45,31.12h-80.84v57.43h74.75v30.8h-74.75v95.28h-39.14v-214.62Z"
+        android:strokeWidth="3.23"
+        android:strokeColor="?attr/colorOnPrimary"
+        android:strokeLineCap="round"
+        android:strokeMiterLimit="10" />
+    <path
+        android:fillColor="?attr/colorOnPrimary"
+        android:pathData="M686.97,594.14c-10.91,9.47-28.04,10.63-44.08,10.63-33.68,0-51.85-19.47-51.85-48.85s23.42-48.64,62.24-48.64c11.87,0,22.46 0.63 ,30.48,2.21v-12c0-17.37-6.1-28.74-27.59-28.74-15.4,0-28.23,2.84-43.31,7.26l-8.02-29.06c16.68-5.05,34.65-8.53,52.61-8.53,39.78,0,64.16,21.16,64.16,60.01v107.07h-33.04l-1.6-11.37Zm-3.21-59.69c-6.74-1.26-14.12-2.21-24.7-2.21-19.25,0-28.87,8.21-28.87,22.74s7.7,24.32,23.1,24.32c10.91,0,20.53-4.42,30.48-12v-32.85Z"
+        android:strokeWidth="3.23"
+        android:strokeColor="?attr/colorOnPrimary"
+        android:strokeLineCap="round"
+        android:strokeMiterLimit="10" />
+    <path
+        android:fillColor="?attr/colorOnPrimary"
+        android:pathData="M757.82,442.91v161.35h37.85v-165.4l-37.85,4.05Z"
+        android:strokeWidth="3.23"
+        android:strokeColor="?attr/colorOnPrimary"
+        android:strokeLineCap="round"
+        android:strokeMiterLimit="10" />
+    <path
+        android:fillColor="?attr/colorOnPrimary"
+        android:pathData="M830.32,577.63l74.11-108.43h-70.9l-3.53-30.48h115.81l4.81,25.34-74.11,109.4h77.32v30.8h-123.51v-26.63Z"
+        android:strokeWidth="3.23"
+        android:strokeColor="?attr/colorOnPrimary"
+        android:strokeLineCap="round"
+        android:strokeMiterLimit="10" />
+    <path
+        android:fillColor="?attr/colorOnPrimary"
+        android:pathData="M 183.67 479.75 L 146.69 479.75"
+        android:strokeWidth="18"
+        android:strokeColor="#ef8481"
+        android:strokeLineCap="round"
+        android:strokeMiterLimit="10" />
+    <path
+        android:fillColor="?attr/colorOnPrimary"
+        android:pathData="M175.12,519.85c0.11-36.34,18.23-55.18,18.23-55.18,0,0,38.44-45.07,83.75,4.2l2.18,2.06,2.06-2.06c45.31-49.27,82.26-4.2,82.26-4.2,0,0,38.56,38.54,6.98,111.69-21.61,50.06-65.72,58.87-91.42,59.45l-2.7-0.1,2.81 0.1 c-22.48-0.5-59.06-7.31-82.33-42.54"
+        android:strokeWidth="18"
+        android:strokeColor="#04bb8a"
+        android:strokeLineCap="round"
+        android:strokeMiterLimit="10" />
+    <path
+        android:fillColor="#04bb8a"
+        android:pathData="M280.16,468.16s-8.22-47.77,26.68-68.03"
+        android:strokeWidth="18"
+        android:strokeColor="#04bb8a"
+        android:strokeLineCap="round"
+        android:strokeMiterLimit="10" />
+    <path
+        android:fillColor="?attr/colorOnPrimary"
+        android:pathData="M146.69,479.75s-23.69 0.47 -23.69,20.68c0,0.97 0.04 ,1.91 0.12 ,2.79,1.55,17.54,17.66,18.76,17.66,18.76h131.69c3.61,0,6.53,2.44,6.53,5.44v57.16c0,3.01-2.92,5.44-6.53,5.44h-117.14s-32.33 0.83 -32.33-26.87v-62.73"
+        android:strokeWidth="18"
+        android:strokeColor="#ef8481"
+        android:strokeLineCap="round"
+        android:strokeMiterLimit="10" />
+    <path
+        android:pathData="M 243.1 587.09 L 243.1 564.8"
+        android:strokeWidth="20.99"
+        android:strokeColor="#ef8481"
+        android:strokeLineCap="square"
+        android:strokeMiterLimit="10" />
+    <path
+        android:pathData="M 202.24 587.09 L 202.24 564.8"
+        android:strokeWidth="20.99"
+        android:strokeColor="#ef8481"
+        android:strokeLineCap="square"
+        android:strokeMiterLimit="10" />
+    <path
+        android:pathData="M 161.38 587.09 L 161.38 564.8"
+        android:strokeWidth="20.99"
+        android:strokeColor="#ef8481"
+        android:strokeLineCap="square"
+        android:strokeMiterLimit="10" />
+</vector>

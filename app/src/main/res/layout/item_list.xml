@@ -48,7 +48,7 @@
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/item_image"
             app:layout_constraintTop_toTopOf="@+id/item_image"
-            tools:text="Push Up" />
+            tools:text="Lorem" />
 
         <TextView
             android:id="@+id/item_desc"

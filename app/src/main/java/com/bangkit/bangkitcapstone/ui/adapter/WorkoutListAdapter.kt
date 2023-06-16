@@ -6,26 +6,28 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.bangkit.bangkitcapstone.R
-import com.bangkit.bangkitcapstone.databinding.ItemListBinding
+import com.bangkit.bangkitcapstone.databinding.WorkoutItemListBinding
 import com.bangkit.bangkitcapstone.model.data.local.entity.WorkoutEntity
+import java.util.*
 
 class WorkoutListAdapter(
     private val callBack: (WorkoutEntity) -> Unit,
 ) : ListAdapter<WorkoutEntity, WorkoutListAdapter.ListWorkoutViewHolder>(DIFF_CALLBACK) {
 
-    class ListWorkoutViewHolder(val binding: ItemListBinding) :
+    private var originalList: List<WorkoutEntity> = emptyList()
+    private var filteredDataList: List<WorkoutEntity> = emptyList()
+
+    class ListWorkoutViewHolder(val binding: WorkoutItemListBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(workout: WorkoutEntity) {
-            binding.itemImage.setImageResource(R.drawable.dummy_image)
-            binding.itemName.text = workout.workoutName
-            binding.itemDesc.text = workout.workoutDesc
-            binding.itemCalories.text = workout.workoutCal
+            binding.itemName.text = workout.name
+            binding.itemDesc.text = workout.desc
+            binding.itemMet.text = workout.cal
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListWorkoutViewHolder {
-        val binding = ItemListBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding = WorkoutItemListBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ListWorkoutViewHolder(binding)
     }
 
@@ -33,6 +35,31 @@ class WorkoutListAdapter(
         val workout = getItem(position)
         if (workout != null) {
             holder.bind(workout)
+        }
+
+        holder.itemView.setOnClickListener {
+            callBack(workout)
+        }
+    }
+
+    fun filterList(query: String) {
+        val filterPattern = query.lowercase(Locale.getDefault())
+
+        if (originalList.isEmpty()) {
+            originalList = currentList
+        }
+
+        filteredDataList = originalList.filter { item ->
+            item.name.lowercase(Locale.getDefault()).contains(filterPattern)
+        }
+
+        submitList(filteredDataList)
+    }
+
+    fun resetFilter() {
+        if (originalList.isNotEmpty()) {
+            submitList(originalList)
+            originalList = emptyList()
         }
     }
 

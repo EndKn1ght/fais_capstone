@@ -31,7 +31,7 @@
     <string name="caloreis">Calories</string>
     <string name="water">Water</string>
     <string name="calories_count">%s / %s</string>
-    <string name="waters_count">%s / %s</string>
+    <string name="waters_count">%s / %s Liter</string>
     <string name="details">Details :</string>
     <string name="carbohydrate">Carbohydrate</string>
     <string name="protein">Protein</string>
@@ -44,7 +44,7 @@
     <string name="bookmark_detail_icon">Bookmark Detail Icon</string>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="calories_intake">Calories Intake</string>
+    <string name="calculator_intake">Calculator Intake</string>
     <string name="select_genders">Select Genders</string>
     <string name="female_option_button">Female Option Button</string>
     <string name="male_option_button">Male Option Button</string>
@@ -64,6 +64,61 @@
     <string name="calories_icon">Calories Icon</string>
     <string name="calories_need_per_day">Calories Need Per Day</string>
     <string name="water_need_per_day">Water Need Per Day</string>
+    <string name="switch_camera">Switch Camera</string>
+    <string name="capture_image">Capture Image</string>
+    <string name="arrow_back_button">Back Button</string>
+    <string name="camera_button">Camera Button</string>
+    <string name="movenet_image_view">Movenet Image View</string>
+    <string name="dairy_intake">Dairy Intake</string>
+    <string name="detailed">Detailed</string>
+    <string name="input_mode">Input Mode</string>
+    <string name="input_carbohydrates">Input Carbohydrates</string>
+    <string name="input_protein">Input Protein</string>
+    <string name="input_fat">Input Fat</string>
+    <string name="input_calories">Input Calories</string>
+    <string name="add">Add</string>
+    <string name="food">Food</string>
+    <string name="input_water">Input Water (Liters)</string>
+    <string name="icon">Icon</string>
+    <string name="history_intake">History Intake</string>
+    <string name="workout_history_intake">Workout History Intake</string>
+    <string name="settings">Settings</string>
+    <string name="alert_title">Logout Confirmation</string>
+    <string name="alert_message">Are You Sure Want To Logout?</string>
+    <string name="alert_cancel">Cancel</string>
+    <string name="alert_confirm">Okay</string>
+    <string name="lightmode">Lightmode</string>
+    <string name="workout_intake">Workout Intake</string>
+    <string name="choose_workout">Choose Workout</string>
+    <string name="input_the_workout_duration">Input The Workout Duration (Hours)</string>
+    <string name="time">Time…</string>
+    <string name="bmr">BMR…</string>
+    <string name="input_your_bmr">Input Your BMR</string>
+    <string name="push_up">Push-ups</string>
+    <string name="user_profile_image">User Profile Image</string>
+    <string name="splash_screen_image">Splash Screen Image</string>
+    <string name="description">Description</string>
+    <string name="type">Type</string>
+    <string name="body_part">Body Part</string>
+    <string name="equipment">Equipment</string>
+    <string name="level">Level</string>
+    <string name="input_workoutname">Input Workoutname</string>
+    <string name="input_met">Input MET</string>
+    <string name="start_workout">start workout</string>
+    <string name="timer">Timer</string>
+    <string name="start_timer">Start Timer</string>
+    <string name="stop_button">Stop</string>
+    <string name="reset_button">Reset</string>
+    <string name="timer_start">Timer Start</string>
+    <string name="timer_stop">Timer Stop</string>
+    <string name="timer_reset">Timer Reset</string>
+    <string name="calendar_button">Calendar Button</string>
+    <string name="upload_local_history_intake">Upload Local History Intake</string>
+    <string name="get_local_history_intake">Get Local History Intake</string>
+    <string name="delete_local_history_intake">Delete Local History Intake</string>
+    <string name="health_label">Health Label</string>
+    <string name="calories">Calories</string>
+    <string name="eat">Eat</string>
 
     <string-array name="activity">
         <item>Sedentary</item>
@@ -72,4 +127,25 @@
         <item>Very Active</item>
         <item>Extra Active</item>
     </string-array>
+
+    <string-array name="option">
+        <item>Food</item>
+        <item>Water</item>
+    </string-array>
+
+    <string-array name="workout">
+        <item>Push-ups</item>
+        <item>Sit-ups</item>
+        <item>Squats</item>
+        <item>Jumping Jacks</item>
+        <item>Burpees</item>
+        <item>Lunges</item>
+        <item>Plank</item>
+        <item>Mountain Climbers</item>
+        <item>High Knees</item>
+        <item>Crunches</item>
+        <item>Leg Raises</item>
+        <item>Russian Twists</item>
+    </string-array>
+
 </resources>

@@ -26,9 +26,9 @@
         android:textColor="@color/text_color_primary"
         android:textSize="32sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/username_login_input"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/email_login_input" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/please_log_in"
@@ -43,13 +43,13 @@
         app:layout_constraintTop_toBottomOf="@+id/welcome_back_login_tv" />
 
     <com.bangkit.bangkitcapstone.ui.custom.CustomEditText
-        android:id="@+id/email_login_input"
+        android:id="@+id/username_login_input"
         android:layout_width="240dp"
         android:layout_height="42dp"
         android:drawablePadding="8dp"
         android:padding="8dp"
-        app:drawableIcon="@drawable/ic_email"
-        app:hint="Email..."
+        app:drawableIcon="@drawable/ic_person"
+        app:hint="Username..."
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -63,16 +63,16 @@
         android:drawablePadding="8dp"
         android:padding="8dp"
         app:drawableIcon="@drawable/ic_lock"
-        app:layout_constraintEnd_toEndOf="@+id/email_login_input"
-        app:layout_constraintStart_toStartOf="@+id/email_login_input"
-        app:layout_constraintTop_toBottomOf="@+id/email_login_input" />
+        app:layout_constraintEnd_toEndOf="@+id/username_login_input"
+        app:layout_constraintStart_toStartOf="@+id/username_login_input"
+        app:layout_constraintTop_toBottomOf="@+id/username_login_input" />
 
     <Button
         android:id="@+id/login_button"
         android:layout_width="240dp"
-        android:layout_height="42dp"
+        android:layout_height="54dp"
         android:layout_marginTop="42dp"
-        android:background="@drawable/rounded_edittext_bg"
+        android:backgroundTint="?attr/colorPrimaryVariant"
         android:text="@string/login_button"
         app:layout_constraintEnd_toEndOf="@+id/password_login_input"
         app:layout_constraintStart_toStartOf="@+id/password_login_input"
@@ -99,5 +99,15 @@
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/register_text"
         app:layout_constraintTop_toBottomOf="@id/login_button" />
+
+    <ProgressBar
+        android:id="@+id/progress_bar_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

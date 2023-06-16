@@ -8,9 +8,16 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="gray">#6A6A6A</color>
+    <color name="gray_darker">#23272a</color>
+    <color name="charcoal">#3e434e</color>
+    <color name="mint_darker">#04bb8a</color>
+    <color name="light_coral">#ef8481</color>
+    <color name="tropical_indigo">#8883f0</color>
+    <color name="sandy_brown">#fb9d59</color>
 
     <color name="text_color_primary">@color/black</color>
     <color name="text_color_variant">@color/white</color>
+
     <color name="orange_light">#FDAC92</color>
     <color name="orange_dark">#FF6E40</color>
     <color name="orange">#FF3D00</color>
@@ -23,7 +30,6 @@
     <color name="blue">#05BFDB</color>
     <color name="mint">#00FFCA</color>
     <color name="pink">#EF31B9</color>
-
 
     <color name="transparent">#00FFFFFF</color>
 </resources>

@@ -9,7 +9,11 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.emptyPreferences
 import androidx.datastore.preferences.preferencesDataStoreFile
 import com.bangkit.bangkitcapstone.model.data.AppRepository
+import com.bangkit.bangkitcapstone.model.data.local.room.daily.DailyRoomDatabase
+import com.bangkit.bangkitcapstone.model.data.local.room.food.FoodRoomDatabase
+import com.bangkit.bangkitcapstone.model.data.local.room.workout.WorkoutRoomDatabase
 import com.bangkit.bangkitcapstone.model.data.local.store.DataStoreManager
+import com.bangkit.bangkitcapstone.model.data.remote.retrofit.ApiConfig
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
@@ -19,8 +23,19 @@ private const val USER_PREFERENCES = "user_preferences"
 object Injection {
 
     fun provideRepository(context: Context): AppRepository {
+        val apiService = ApiConfig.getApiService()
+        val databaseDaily = DailyRoomDatabase.getDatabase(context)
+        val databaseWorkout = WorkoutRoomDatabase.getDatabase(context)
+        val foodRoomDatabase = FoodRoomDatabase.getDatabase(context)
+        val dailyDao = databaseDaily.dailyDao()
+        val workoutDao = databaseWorkout.workoutDao()
+        val foodDao = foodRoomDatabase.foodDao()
         return AppRepository.getInstance(
-            DataStoreManager.getInstance(providePreferencesDataStore(context))
+            DataStoreManager.getInstance(providePreferencesDataStore(context)),
+            apiService,
+            dailyDao,
+            workoutDao,
+            foodDao
         )
     }
 

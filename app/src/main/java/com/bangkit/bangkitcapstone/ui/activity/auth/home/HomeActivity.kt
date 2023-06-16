@@ -27,18 +27,21 @@ class HomeActivity : AppCompatActivity() {
         val navController = navHostFragment.navController
         navView.setupWithNavController(navController)
 
+        val hiddenDestinations =
+            setOf(
+                R.id.foodDetailFragment,
+                R.id.caloriesFragment,
+                R.id.cameraFragment,
+                R.id.dairyIntakeFragment,
+                R.id.timerFragment,
+                R.id.workoutDetailFragment,
+                R.id.workoutIntakeFragment,
+                R.id.settingsFragment
+            )
+
         navController.addOnDestinationChangedListener { _, destination, _ ->
-            when (destination.id) {
-                R.id.foodDetailFragment -> {
-                    navView.visibility = View.GONE
-                }
-                R.id.caloriesFragment -> {
-                    navView.visibility = View.GONE
-                }
-                else -> {
-                    navView.visibility = View.VISIBLE
-                }
-            }
+            navView.visibility =
+                if (destination.id in hiddenDestinations) View.GONE else View.VISIBLE
         }
     }
 }

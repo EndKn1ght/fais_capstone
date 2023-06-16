@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".ui.fragment.home.DashboardFragment">
 
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -34,6 +35,7 @@
             app:layout_constraintTop_toTopOf="@+id/dashboard_profile_picture" />
 
         <TextView
+            android:id="@+id/username_dashboard"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -64,7 +66,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="32dp"
-            android:backgroundTint="@color/background"
+            android:backgroundTint="@color/sandy_brown"
             android:clickable="true"
             android:focusable="true"
             app:layout_constraintEnd_toEndOf="parent"
@@ -82,7 +84,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
                     android:text="@string/caloreis"
-                    android:textColor="@color/orange_dark"
+                    android:textColor="@color/text_color_variant"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
@@ -96,7 +98,7 @@
                     android:layout_margin="12dp"
                     app:cpb_background_progressbar_color="@color/orange_light"
                     app:cpb_background_progressbar_width="12dp"
-                    app:cpb_progress="80"
+                    app:cpb_progress="0"
                     app:cpb_progress_direction="to_left"
                     app:cpb_progress_max="100"
                     app:cpb_progressbar_color="@color/orange_dark"
@@ -124,7 +126,7 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="8dp"
                     android:text="@string/calories_count"
-                    android:textColor="@color/text_color_primary"
+                    android:textColor="@color/text_color_variant"
                     android:textSize="16sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="@+id/calories_per_day"
@@ -136,7 +138,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:text="@string/calories_need_per_day"
-                    android:textColor="@color/orange"
+                    android:textColor="@color/text_color_variant"
                     android:textSize="16sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toEndOf="@+id/calories_progress_circular"
@@ -153,7 +155,7 @@
             android:layout_margin="32dp"
             android:clickable="true"
             android:focusable="true"
-            app:cardBackgroundColor="@color/background"
+            app:cardBackgroundColor="@color/tropical_indigo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/calories_cardview">
@@ -169,7 +171,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
                     android:text="@string/water"
-                    android:textColor="@color/blue_dark"
+                    android:textColor="@color/text_color_variant"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
@@ -182,7 +184,7 @@
                     android:layout_margin="12dp"
                     app:cpb_background_progressbar_color="@color/blue_light"
                     app:cpb_background_progressbar_width="12dp"
-                    app:cpb_progress="10"
+                    app:cpb_progress="0"
                     app:cpb_progress_direction="to_left"
                     app:cpb_progress_max="100"
                     app:cpb_progressbar_color="@color/blue_dark"
@@ -210,7 +212,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:text="@string/water_need_per_day"
-                    android:textColor="@color/blue"
+                    android:textColor="@color/text_color_variant"
                     android:textSize="16sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toEndOf="@+id/water_progress_circular"
@@ -223,7 +225,7 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="8dp"
                     android:text="@string/waters_count"
-                    android:textColor="@color/text_color_primary"
+                    android:textColor="@color/text_color_variant"
                     android:textSize="16sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="@+id/water_per_day"
@@ -233,6 +235,132 @@
 
         </com.google.android.material.card.MaterialCardView>
 
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/food_water_intake_history"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_margin="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/water_cardview">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:cardBackgroundColor="@color/background">
+
+                <View
+                    android:id="@+id/header_history"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:background="@color/mint"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageButton
+                    android:id="@+id/water_food_add_button"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:layout_margin="8dp"
+                    android:layout_marginBottom="2dp"
+                    android:background="@drawable/rounded_corner_no_stroke"
+                    android:backgroundTint="@color/mint"
+                    android:contentDescription="@string/action_add_button"
+                    android:src="@drawable/ic_add"
+                    app:layout_constraintBottom_toBottomOf="@+id/header_history"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/mini_rv_history"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/header_history"
+                    tools:listitem="@layout/food_water_history_items" />
+
+                <TextView
+                    android:id="@+id/history_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/history_intake"
+                    android:textColor="@color/text_color_primary"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/header_history"
+                    app:layout_constraintStart_toStartOf="@+id/header_history"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/workout_intake_history"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_margin="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/food_water_intake_history">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:cardBackgroundColor="@color/background">
+
+                <View
+                    android:id="@+id/header_workout_history"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:background="@color/mint"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageButton
+                    android:id="@+id/workout_action_add_button"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:layout_margin="8dp"
+                    android:layout_marginBottom="2dp"
+                    android:background="@drawable/rounded_corner_no_stroke"
+                    android:backgroundTint="@color/mint"
+                    android:contentDescription="@string/action_add_button"
+                    android:src="@drawable/ic_add"
+                    app:layout_constraintBottom_toBottomOf="@+id/header_workout_history"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/mini_rv_history_workout"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/header_workout_history" />
+
+                <TextView
+                    android:id="@+id/workout_history_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/workout_history_intake"
+                    android:textColor="@color/text_color_primary"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/header_workout_history"
+                    app:layout_constraintStart_toStartOf="@+id/header_workout_history"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </ScrollView>

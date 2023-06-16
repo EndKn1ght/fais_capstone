@@ -9,16 +9,23 @@
         android:id="@+id/navigation_home"
         android:name="com.bangkit.bangkitcapstone.ui.fragment.home.DashboardFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_dashboard" >
+        tools:layout="@layout/fragment_dashboard">
         <action
             android:id="@+id/action_navigation_home_to_caloriesFragment"
             app:destination="@id/caloriesFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_dairyIntakeFragment"
+            app:destination="@id/dairyIntakeFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_workoutIntakeFragment"
+            app:destination="@id/workoutIntakeFragment" />
+
     </fragment>
     <fragment
         android:id="@+id/navigation_recipe"
         android:name="com.bangkit.bangkitcapstone.ui.fragment.home.RecipeFragment"
         android:label="fragment_recipe"
-        tools:layout="@layout/fragment_recipe" >
+        tools:layout="@layout/fragment_recipe">
         <action
             android:id="@+id/action_navigation_recipe_to_foodDetailFragment"
             app:destination="@id/foodDetailFragment" />
@@ -27,20 +34,89 @@
         android:id="@+id/navigation_profile"
         android:name="com.bangkit.bangkitcapstone.ui.fragment.home.ProfileFragment"
         android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_navigation_profile_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/navigation_workout"
         android:name="com.bangkit.bangkitcapstone.ui.fragment.home.WorkoutFragment"
         android:label="fragment_workout"
-        tools:layout="@layout/fragment_workout" />
+        tools:layout="@layout/fragment_workout">
+        <action
+            android:id="@+id/action_navigation_workout_to_cameraFragment"
+            app:destination="@id/cameraFragment" />
+        <action
+            android:id="@+id/action_navigation_workout_to_workoutDetailFragment"
+            app:destination="@id/workoutDetailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/foodDetailFragment"
         android:name="com.bangkit.bangkitcapstone.ui.fragment.detail.FoodDetailFragment"
         android:label="fragment_food_detail"
-        tools:layout="@layout/fragment_food_detail" />
+        tools:layout="@layout/fragment_food_detail" >
+        <argument
+            android:name="foodEnity"
+            app:argType="com.bangkit.bangkitcapstone.model.data.local.entity.FoodEntity" />
+    </fragment>
     <fragment
         android:id="@+id/caloriesFragment"
-        android:name="com.bangkit.bangkitcapstone.ui.fragment.detail.CaloriesFragment"
+        android:name="com.bangkit.bangkitcapstone.ui.fragment.detail.CalculatorFragment"
         android:label="fragment_calories"
-        tools:layout="@layout/fragment_calories" />
+        tools:layout="@layout/fragment_calculator_intake" />
+    <fragment
+        android:id="@+id/cameraFragment"
+        android:name="com.bangkit.bangkitcapstone.ui.fragment.camera.CameraFragment"
+        android:label="fragment_camera"
+        tools:layout="@layout/fragment_camera" />
+    <fragment
+        android:id="@+id/dairyIntakeFragment"
+        android:name="com.bangkit.bangkitcapstone.ui.fragment.detail.DairyIntakeFragment"
+        android:label="fragment_dairy_intake"
+        tools:layout="@layout/fragment_dairy_intake" />
+    <fragment
+        android:id="@+id/workoutIntakeFragment"
+        android:name="com.bangkit.bangkitcapstone.ui.fragment.detail.WorkoutIntakeFragment"
+        android:label="fragment_workout_intake"
+        tools:layout="@layout/fragment_workout_intake">
+
+        <argument
+            android:name="data"
+            app:argType="com.bangkit.bangkitcapstone.model.data.local.entity.WorkoutEntity[]" />
+    </fragment>
+    <fragment
+        android:id="@+id/workoutDetailFragment"
+        android:name="com.bangkit.bangkitcapstone.ui.fragment.detail.WorkoutDetailFragment"
+        android:label="fragment_workout_detail"
+        tools:layout="@layout/fragment_workout_detail">
+        <argument
+            android:name="workoutEnity"
+            app:argType="com.bangkit.bangkitcapstone.model.data.local.entity.WorkoutEntity" />
+        <action
+            android:id="@+id/action_workoutDetailFragment_to_timerFragment"
+            app:destination="@id/timerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/timerFragment"
+        android:name="com.bangkit.bangkitcapstone.ui.fragment.detail.TimerFragment"
+        android:label="fragment_timer"
+        tools:layout="@layout/fragment_timer">
+        <action
+            android:id="@+id/action_timerFragment_to_workoutIntakeFragment"
+            app:destination="@id/workoutIntakeFragment" />
+        <argument
+            android:name="name"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="met"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.bangkit.bangkitcapstone.ui.fragment.detail.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
 </navigation>

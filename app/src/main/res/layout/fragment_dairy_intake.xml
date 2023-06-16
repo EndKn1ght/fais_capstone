@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragment.detail.DairyIntakeFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/intake_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/intake_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/back_button"
+                android:src="@drawable/ic_arrow_left" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/dairy_intake"
+                android:textColor="@color/text_color_primary"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/intake_spinner_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="32dp"
+            android:hint="@string/input_mode"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/intake_toolbar"
+            app:startIconDrawable="@drawable/ic_settings">
+
+            <AutoCompleteTextView
+                android:id="@+id/autoCompleteOption"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="none"
+                android:text="@string/food"
+                tools:ignore="LabelFor" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/input_carbohydrates"
+            android:textColor="@color/text_color_primary"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/intake_spinner_layout"
+            app:layout_constraintTop_toBottomOf="@+id/intake_spinner_layout" />
+
+        <com.bangkit.bangkitcapstone.ui.custom.CustomEditText
+            android:id="@+id/name_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:drawablePadding="8dp"
+            android:padding="12dp"
+            app:drawableIcon="@drawable/ic_food"
+            app:hint="@string/food_name_placeholder"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/name_tv" />
+
+        <TextView
+            android:id="@+id/carb_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/input_carbohydrates"
+            android:textColor="@color/text_color_primary"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/name_input"
+            app:layout_constraintTop_toBottomOf="@+id/name_input" />
+
+        <com.bangkit.bangkitcapstone.ui.custom.CustomEditText
+            android:id="@+id/carb_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:drawablePadding="8dp"
+            android:inputType="number"
+            android:padding="12dp"
+            app:drawableIcon="@drawable/ic_lunch_dining"
+            app:hint="@string/carbohydrate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/carb_tv" />
+
+        <TextView
+            android:id="@+id/prot_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/input_protein"
+            android:textColor="@color/text_color_primary"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/carb_input"
+            app:layout_constraintTop_toBottomOf="@+id/carb_input" />
+
+        <com.bangkit.bangkitcapstone.ui.custom.CustomEditText
+            android:id="@+id/prot_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:drawablePadding="8dp"
+            android:inputType="number"
+            android:padding="12dp"
+            app:drawableIcon="@drawable/ic_hive"
+            app:hint="@string/protein"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/prot_tv" />
+
+        <TextView
+            android:id="@+id/fat_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/input_fat"
+            android:textColor="@color/text_color_primary"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/prot_input"
+            app:layout_constraintTop_toBottomOf="@+id/prot_input" />
+
+        <com.bangkit.bangkitcapstone.ui.custom.CustomEditText
+            android:id="@+id/fat_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:drawablePadding="8dp"
+            android:inputType="number"
+            android:padding="12dp"
+            app:drawableIcon="@drawable/ic_water"
+            app:hint="@string/fat"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fat_tv" />
+
+        <TextView
+            android:id="@+id/cal_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:alpha="0.5"
+            android:enabled="false"
+            android:text="@string/input_water"
+            android:textColor="@color/text_color_primary"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/fat_input"
+            app:layout_constraintTop_toBottomOf="@+id/fat_input" />
+
+        <com.bangkit.bangkitcapstone.ui.custom.CustomEditText
+            android:id="@+id/cal_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:alpha="0.5"
+            android:drawablePadding="8dp"
+            android:enabled="false"
+            android:inputType="number"
+            android:padding="12dp"
+            app:drawableIcon="@drawable/ic_water"
+            app:hint="@string/water"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cal_tv" />
+
+        <Button
+            android:id="@+id/add_intake_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="32dp"
+            android:text="@string/add"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cal_input" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

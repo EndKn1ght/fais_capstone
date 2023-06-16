@@ -14,13 +14,25 @@ class WorkoutEntity(
     @PrimaryKey
     val id: Int,
 
-    @ColumnInfo(name = "workoutName")
-    val workoutName: String,
+    @ColumnInfo(name = "name")
+    val name: String,
 
-    @ColumnInfo(name = "workoutDesc")
-    val workoutDesc: String,
+    @ColumnInfo(name = "desc")
+    val desc: String,
 
-    @ColumnInfo(name = "workoutCal")
-    val workoutCal: String,
+    @ColumnInfo(name = "cal")
+    val cal: String,
 
-) : Parcelable
+    @ColumnInfo(name = "level")
+    val level: String,
+
+    @ColumnInfo(name = "equipment")
+    val equipment: String,
+
+    @ColumnInfo(name = "type")
+    val type: String,
+
+    @ColumnInfo(name = "bodyPart")
+    val bodyPart: String,
+
+    ) : Parcelable

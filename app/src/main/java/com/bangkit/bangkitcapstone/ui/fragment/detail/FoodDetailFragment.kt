@@ -1,18 +1,26 @@
 package com.bangkit.bangkitcapstone.ui.fragment.detail
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.bangkit.bangkitcapstone.R
 import com.bangkit.bangkitcapstone.databinding.FragmentFoodDetailBinding
-import com.bangkit.bangkitcapstone.model.data.remote.response.DummyData
+import com.bangkit.bangkitcapstone.helper.Helper.formatListWithNumbers
+import com.bangkit.bangkitcapstone.model.data.UiState
+import com.bangkit.bangkitcapstone.model.data.local.entity.FoodEntity
 import com.bangkit.bangkitcapstone.ui.adapter.SectionChartAdapter
+import com.bangkit.bangkitcapstone.ui.fragment.viewmodel.FoodDetailViewModel
+import com.bangkit.bangkitcapstone.ui.fragment.viewmodel.ViewModelFactory
+import com.bumptech.glide.Glide
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
@@ -20,6 +28,10 @@ class FoodDetailFragment : Fragment() {
 
     private var _binding: FragmentFoodDetailBinding? = null
     private val binding get() = _binding!!
+    private var foodData: FoodEntity? = null
+    private val viewModel: FoodDetailViewModel by activityViewModels {
+        ViewModelFactory.getInstance(requireActivity())
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,14 +44,16 @@ class FoodDetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.foodDetailImage.setImageResource(R.drawable.dummy_image)
-        binding.foodDetailDesc.text = DummyData.food[0].foodDesc
+        arguments?.let {
+            foodData = FoodDetailFragmentArgs.fromBundle(it).foodEnity
+            setupUi(foodData!!)
+            setViewPager(foodData!!)
+        }
 
         binding.backButtonDetail.setOnClickListener {
             findNavController().popBackStack()
         }
 
-        setViewPager()
     }
 
     override fun onDestroy() {
@@ -47,8 +61,51 @@ class FoodDetailFragment : Fragment() {
         _binding = null
     }
 
-    private fun setViewPager(){
-        val sectionsPagerAdapter = SectionChartAdapter(requireActivity() as AppCompatActivity)
+    private fun setupUi(data: FoodEntity) {
+        val listRecipe = formatListWithNumbers(data.foodRecipe)
+
+        Glide.with(requireContext())
+            .load(data.foodImage)
+            .into(binding.foodDetailImage)
+
+        binding.foodDetailName.text = data.foodName
+        binding.foodDetailRecipe.text = listRecipe
+        binding.foodDetailCal.text = data.foodCal
+        binding.foodDetailHealth.text = data.foodHealth.joinToString(" ")
+
+        /*val regex = """(\w+)=(\w+)\(unit=([\wµ]+), quantity=([\d.]+), label=(.*)\)""".toRegex()
+
+        val matches = regex.findAll(data.foodNutrition)
+        matches.forEach { matchResult ->
+            val nutrientName = matchResult.groupValues[0]
+            val unit = matchResult.groupValues[1]
+            val quantity = matchResult.groupValues[2]
+            val label = matchResult.groupValues[3]
+            Log.e("Nutrient", nutrientName)
+            Log.e("Unit", unit)
+            Log.e("Quantity", quantity)
+            Log.e("Label", label)
+        }*/
+
+        binding.eatButton.setOnClickListener {
+            viewModel.insertFood(data.foodName, data.foodCal).observe(viewLifecycleOwner) {
+                when (it) {
+                    is UiState.Loading -> {}
+                    is UiState.Success -> {
+
+                        findNavController().popBackStack()
+                    }
+                    is UiState.Error -> {
+                        Toast.makeText(requireContext(), it.error, Toast.LENGTH_SHORT).show()
+                    }
+                    else -> {}
+                }
+            }
+        }
+    }
+
+    private fun setViewPager(data: FoodEntity) {
+        val sectionsPagerAdapter = SectionChartAdapter(requireActivity() as AppCompatActivity, data)
         val viewPager: ViewPager2 = binding.viewPagerDetail
         viewPager.adapter = sectionsPagerAdapter
         val tabs: TabLayout = binding.tabLayoutDetail

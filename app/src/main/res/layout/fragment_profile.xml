@@ -19,7 +19,7 @@
         android:layout_width="110dp"
         android:layout_height="110dp"
         android:layout_marginTop="64dp"
-        android:contentDescription="TODO"
+        android:contentDescription="@string/user_profile_image"
         android:src="@drawable/ic_person"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -50,7 +50,7 @@
         app:layout_constraintTop_toBottomOf="@+id/user_realname" />
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/option_bookmark"
+        android:id="@+id/option_settings"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -58,20 +58,21 @@
         android:layout_marginEnd="32dp"
         android:clickable="true"
         android:focusable="true"
+        app:cardBackgroundColor="?attr/colorOnPrimary"
         app:cardElevation="0dp"
         app:layout_constraintStart_toStartOf="@id/user_profile_image"
         app:layout_constraintTop_toBottomOf="@+id/user_email">
 
         <TextView
-            android:id="@+id/option_bookmark_tv"
+            android:id="@+id/option_settings_tv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawablePadding="8dp"
             android:padding="8dp"
-            android:text="@string/favorites"
+            android:text="@string/settings"
             android:textColor="@color/text_color_primary"
             app:drawableEndCompat="@drawable/ic_arrow_right"
-            app:drawableStartCompat="@drawable/ic_bookmark_false" />
+            app:drawableStartCompat="@drawable/ic_settings" />
 
     </com.google.android.material.card.MaterialCardView>
 
@@ -85,7 +86,7 @@
         android:background="@color/text_color_primary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/option_bookmark" />
+        app:layout_constraintTop_toBottomOf="@+id/option_settings" />
 
 
     <com.google.android.material.card.MaterialCardView
@@ -97,8 +98,9 @@
         android:layout_marginEnd="32dp"
         android:clickable="true"
         android:focusable="true"
+        app:cardBackgroundColor="?attr/colorOnPrimary"
         app:cardElevation="0dp"
-        app:layout_constraintStart_toStartOf="@+id/option_bookmark"
+        app:layout_constraintStart_toStartOf="@+id/option_settings"
         app:layout_constraintTop_toBottomOf="@+id/simple_line_first">
 
         <TextView
@@ -114,33 +116,6 @@
 
     </com.google.android.material.card.MaterialCardView>
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/language_profile"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginEnd="32dp"
-        android:clickable="true"
-        android:focusable="true"
-        app:cardElevation="0dp"
-        app:layout_constraintStart_toStartOf="@+id/dark_mode"
-        app:layout_constraintTop_toBottomOf="@+id/dark_mode">
-
-        <TextView
-            android:id="@+id/language_profile_tv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:drawablePadding="8dp"
-            android:padding="8dp"
-            android:text="@string/language"
-            android:textColor="@color/text_color_primary"
-            app:drawableEndCompat="@drawable/ic_arrow_right"
-            app:drawableStartCompat="@drawable/ic_language" />
-
-    </com.google.android.material.card.MaterialCardView>
-
-
     <View
         android:id="@+id/simple_line_second"
         android:layout_width="match_parent"
@@ -151,7 +126,7 @@
         android:background="@color/text_color_primary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/language_profile" />
+        app:layout_constraintTop_toBottomOf="@+id/dark_mode" />
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/logout_profile"
@@ -162,6 +137,7 @@
         android:layout_marginEnd="32dp"
         android:clickable="true"
         android:focusable="true"
+        app:cardBackgroundColor="?attr/colorOnPrimary"
         app:cardElevation="0dp"
         app:layout_constraintStart_toStartOf="@+id/simple_line_second"
         app:layout_constraintTop_toBottomOf="@+id/simple_line_second">

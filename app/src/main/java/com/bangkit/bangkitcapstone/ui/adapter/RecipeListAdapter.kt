@@ -6,9 +6,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.bangkit.bangkitcapstone.R
 import com.bangkit.bangkitcapstone.databinding.ItemListBinding
 import com.bangkit.bangkitcapstone.model.data.local.entity.FoodEntity
+import com.bumptech.glide.Glide
+import java.util.*
 
 class RecipeListAdapter(
     private val callBack: (FoodEntity) -> Unit,
@@ -16,12 +17,18 @@ class RecipeListAdapter(
     DIFF_CALLBACK
 ) {
 
+    private var originalList: List<FoodEntity> = emptyList()
+    private var filteredDataList: List<FoodEntity> = emptyList()
+
     class ListRecipeViewHolder(val binding: ItemListBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(recipe: FoodEntity) {
-            binding.itemImage.setImageResource(R.drawable.dummy_image)
+
+            Glide.with(binding.root)
+                .load(recipe.foodImage)
+                .into(binding.itemImage)
             binding.itemName.text = recipe.foodName
-            binding.itemDesc.text = recipe.foodDesc
+            binding.itemDesc.text = recipe.foodHealth.joinToString(" ")
             binding.itemCalories.text = recipe.foodCal
         }
     }
@@ -36,9 +43,29 @@ class RecipeListAdapter(
         if (recipe != null) {
             holder.bind(recipe)
         }
-
         holder.binding.itemLayout.setOnClickListener {
             callBack(recipe)
+        }
+    }
+
+    fun filterList(query: String) {
+        val filterPattern = query.lowercase(Locale.getDefault())
+
+        if (originalList.isEmpty()) {
+            originalList = currentList
+        }
+
+        filteredDataList = originalList.filter { item ->
+            item.foodName.lowercase(Locale.getDefault()).contains(filterPattern)
+        }
+
+        submitList(filteredDataList)
+    }
+
+    fun resetFilter() {
+        if (originalList.isNotEmpty()) {
+            submitList(originalList)
+            originalList = emptyList()
         }
     }
 

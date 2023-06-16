@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragment.detail.WorkoutIntakeFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/workout_intake_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/wokrout_intake_back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/back_button"
+            android:src="@drawable/ic_arrow_left" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/workout_intake"
+            android:textColor="@color/text_color_primary"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/workout_name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="32dp"
+        android:text="@string/input_workoutname"
+        android:textColor="@color/text_color_primary"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/workout_intake_toolbar" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/workout_name_input"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintTop_toBottomOf="@+id/workout_name_tv">
+
+        <AutoCompleteTextView
+            android:id="@+id/wokrout_auto_complete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_dumbbell"
+            android:drawablePadding="8dp"
+            android:padding="8dp"
+            android:text="@string/choose_workout" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/workout_met_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="32dp"
+        android:text="@string/input_met"
+        android:textColor="@color/text_color_primary"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/workout_name_input" />
+
+    <com.bangkit.bangkitcapstone.ui.custom.CustomEditText
+        android:id="@+id/workout_met_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:drawablePadding="8dp"
+        android:inputType="numberDecimal"
+        android:padding="16dp"
+        app:drawableIcon="@drawable/ic_whatshot"
+        app:hint="Input MET..."
+        app:layout_constraintTop_toBottomOf="@+id/workout_met_tv" />
+
+    <TextView
+        android:id="@+id/workout_time_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="32dp"
+        android:text="@string/input_the_workout_duration"
+        android:textColor="@color/text_color_primary"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/workout_met_input" />
+
+    <com.bangkit.bangkitcapstone.ui.custom.CustomEditText
+        android:id="@+id/workout_time_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:drawablePadding="8dp"
+        android:inputType="numberDecimal"
+        android:padding="16dp"
+        app:drawableIcon="@drawable/ic_time"
+        app:hint="@string/time"
+        app:layout_constraintTop_toBottomOf="@+id/workout_time_tv" />
+
+    <TextView
+        android:id="@+id/workout_bmr_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="32dp"
+        android:text="@string/input_your_bmr"
+        android:textColor="@color/text_color_primary"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/workout_time_input" />
+
+    <com.bangkit.bangkitcapstone.ui.custom.CustomEditText
+        android:id="@+id/workout_bmr_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:drawablePadding="8dp"
+        android:inputType="numberDecimal"
+        android:padding="16dp"
+        app:drawableIcon="@drawable/ic_body"
+        app:hint="@string/bmr"
+        app:layout_constraintTop_toBottomOf="@+id/workout_bmr_tv" />
+
+    <Button
+        android:id="@+id/caluculate_workout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="32dp"
+        android:text="@string/calculate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/workout_bmr_input" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

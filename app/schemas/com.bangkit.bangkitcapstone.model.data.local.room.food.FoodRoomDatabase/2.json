@@ -1,0 +1,136 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 2,
+    "identityHash": "f39a9f39e897bf9f3551aff3470ec04d",
+    "entities": [
+      {
+        "tableName": "FoodEntity",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `foodImage` TEXT NOT NULL, `foodName` TEXT NOT NULL, `foodhealth` TEXT NOT NULL, `foodCal` TEXT NOT NULL, `foodRecipe` TEXT NOT NULL, `VITB6A` REAL NOT NULL, `VITC` REAL NOT NULL, `CHOCDF.net` REAL NOT NULL, `FATRN` REAL NOT NULL, `CA` REAL NOT NULL, `WATER` REAL NOT NULL, `SUGAR` REAL NOT NULL, `PROCNT` REAL NOT NULL, `NA` REAL NOT NULL, `ZN` REAL NOT NULL, `VITA_RAE` REAL NOT NULL, `FE` REAL NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "foodImage",
+            "columnName": "foodImage",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "foodName",
+            "columnName": "foodName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "foodHealth",
+            "columnName": "foodhealth",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "foodCal",
+            "columnName": "foodCal",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "foodRecipe",
+            "columnName": "foodRecipe",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "vitB6",
+            "columnName": "VITB6A",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "vitC",
+            "columnName": "VITC",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "carbs",
+            "columnName": "CHOCDF.net",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "fat",
+            "columnName": "FATRN",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "calcium",
+            "columnName": "CA",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "water",
+            "columnName": "WATER",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sugar",
+            "columnName": "SUGAR",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "prot",
+            "columnName": "PROCNT",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sodium",
+            "columnName": "NA",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "zinc",
+            "columnName": "ZN",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "vitA",
+            "columnName": "VITA_RAE",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "iron",
+            "columnName": "FE",
+            "affinity": "REAL",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'f39a9f39e897bf9f3551aff3470ec04d')"
+    ]
+  }
+}

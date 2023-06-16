@@ -3,12 +3,17 @@ package com.bangkit.bangkitcapstone.ui.fragment.pager
 import android.graphics.Color
 import android.graphics.Typeface
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
 import com.bangkit.bangkitcapstone.R
 import com.bangkit.bangkitcapstone.databinding.FragmentPieChartBinding
+import com.bangkit.bangkitcapstone.model.data.local.entity.FoodEntity
+import com.bangkit.bangkitcapstone.ui.fragment.viewmodel.FoodDetailViewModel
+import com.bangkit.bangkitcapstone.ui.fragment.viewmodel.ViewModelFactory
 import com.github.mikephil.charting.charts.PieChart
 import com.github.mikephil.charting.data.PieData
 import com.github.mikephil.charting.data.PieDataSet
@@ -19,6 +24,9 @@ class PieChartFragment : Fragment() {
 
     private var _binding: FragmentPieChartBinding? = null
     private val binding get() = _binding!!
+    private val viewModel: FoodDetailViewModel by activityViewModels {
+        ViewModelFactory.getInstance(requireActivity())
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,7 +39,8 @@ class PieChartFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        setupPieChart(binding.pieChart)
+        val data: FoodEntity? = arguments?.getParcelable("data")
+        setupPieChart(binding.pieChart, data!!)
     }
 
     override fun onDestroy() {
@@ -39,12 +48,12 @@ class PieChartFragment : Fragment() {
         _binding = null
     }
 
-    private fun setupPieChart(pieChart: PieChart) {
+    private fun setupPieChart(pieChart: PieChart, foodData: FoodEntity) {
         // Create data entries for the chart
         val entries = listOf(
-            PieEntry(40f, resources.getString(R.string.carbohydrate)),
-            PieEntry(20f, resources.getString(R.string.protein)),
-            PieEntry(30f, resources.getString(R.string.fat))
+            PieEntry(foodData.carbs, resources.getString(R.string.carbohydrate)),
+            PieEntry(foodData.prot, resources.getString(R.string.protein)),
+            PieEntry(foodData.fat, resources.getString(R.string.fat))
         )
 
         // Create a dataset with the entries
