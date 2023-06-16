@@ -119,6 +119,8 @@
     <string name="health_label">Health Label</string>
     <string name="calories">Calories</string>
     <string name="eat">Eat</string>
+    <string name="your_pose">Your Pose:</string>
+    <string name="minus_string">-</string>
 
     <string-array name="activity">
         <item>Sedentary</item>

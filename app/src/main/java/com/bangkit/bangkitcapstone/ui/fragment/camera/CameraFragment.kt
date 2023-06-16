@@ -2,7 +2,6 @@ package com.bangkit.bangkitcapstone.ui.fragment.camera
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import com.bangkit.bangkitcapstone.databinding.FragmentCameraBinding
 import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Context
@@ -19,11 +18,10 @@ import android.view.*
 import android.widget.ImageView
 import androidx.core.content.ContextCompat
 import androidx.navigation.fragment.findNavController
+import com.bangkit.bangkitcapstone.databinding.FragmentCameraBinding
 import com.bangkit.bangkitcapstone.helper.Helper.KEYPOINT_DICT
 import com.bangkit.bangkitcapstone.ml.LiteModelMovenetSingleposeLightningTfliteFloat164
 import com.bangkit.bangkitcapstone.model.data.ml.PoseClassifier
-//import com.bangkit.bangkitcapstone.model.data.ml.KEYPOINT_DICT
-//import com.bangkit.bangkitcapstone.model.data.ml.getKeypoints
 import org.tensorflow.lite.DataType
 import org.tensorflow.lite.support.image.ImageProcessor
 import org.tensorflow.lite.support.image.TensorImage
@@ -238,6 +236,11 @@ class CameraFragment : Fragment() {
                 Log.e("result", "$result")
                 Log.e("pushupReps", "$pushupReps")
                 Log.e("pushupForm", "$pushupForm")
+                if (pushupForm >= 0.1) {
+                    binding.repsOutput.text = "Good Position"
+                } else if (pushupForm <= 0.0) {
+                    binding.repsOutput.text = "Bad Position"
+                }
 
                 val mutable = bitmap.copy(Bitmap.Config.ARGB_8888, true)
                 val canvas = Canvas(mutable)
