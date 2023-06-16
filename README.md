@@ -1,6 +1,6 @@
 # Fais Your Health Assistant
 
-![App Logo](app_logo.png)
+![App Logo](logo_faiz.svg)
 
 Fais Your Health Assistant is a mobile application developed as part of my Product Capstone project. It aims to assist users in managing their health by providing features such as calorie tracking, workout recommendations, food recipes, and pose detection using TensorFlow Lite.
 
