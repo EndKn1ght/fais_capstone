@@ -209,10 +209,8 @@ class CameraFragment : Fragment() {
 
                 val keypointsArray = getKeypoints(outputFeature0)
 
-                // Predict pose from the 1D array
                 val result = classifier.predictPose(keypointsArray)
 
-                // Calculate keypoints angles for squat
                 if (result <= 1.0 && result > 0.95) {
                     val kneeAngle = kneeAngle(keypointsArray)
 
@@ -220,16 +218,13 @@ class CameraFragment : Fragment() {
                     downSquat(kneeAngle)
                 }
 
-                // Calculate keypoints angles for pushup
                 else if (result in 0.0..5.0) {
                     val elbowAngle = armAngle(keypointsArray)
                     val backAngle = backAngle(keypointsArray)
 
-                    // Check user in up position or down position and add reps if user is going up and down
                     pushupReps = upPushup(elbowAngle, pushupReps)
                     downPushup(elbowAngle)
 
-                    // Check user's pushup form (0 if back position is bad, 1 if back position is good)
                     pushupForm = checkPushup(backAngle)
                 }
 
@@ -280,8 +275,6 @@ class CameraFragment : Fragment() {
     }
 
     private fun armAngle(keypoints: List<Float>): Float {
-        // Input berupa list yang sudah dikonvert dengan fungsi getKeypoints()
-        // Output berupa sudut dari sikut
         val leftWristIndex = KEYPOINT_DICT["left_wrist"]
         val leftShoulderIndex = KEYPOINT_DICT["left_shoulder"]
         val leftElbowIndex = KEYPOINT_DICT["left_elbow"]
@@ -297,10 +290,7 @@ class CameraFragment : Fragment() {
         return (at1 - at2) * (180 / PI.toFloat())
     }
 
-    // Fungsi buat ngitung kelurusan punggung (ngitung sudut pinggang) saat pushup
     private fun backAngle(keypoints: List<Float>): Float {
-        // Input berupa list yang sudah dikonvert dengan fungsi getKeypoints()
-        // Output berupa sudut dari pinggang
         val leftHipIndex = KEYPOINT_DICT["left_hip"]
         val leftShoulderIndex = KEYPOINT_DICT["left_shoulder"]
         val leftKneeIndex = KEYPOINT_DICT["left_knee"]
@@ -316,12 +306,7 @@ class CameraFragment : Fragment() {
         return (at1 - at2) * (180 / PI.toFloat())
     }
 
-// ------------------------------ Fungsi Cek Sudut Squat
-
-    // Fungsi ini buat ngitung sudut lutut (squat)
     private fun kneeAngle(keypoints: List<Float>): Float {
-        // Input berupa list yang sudah dikonvert dengan fungsi getKeypoints()
-        // Output berupa sudut dari tekukan lutut
         val leftHipIndex = KEYPOINT_DICT["left_hip"]
         val leftAnkleIndex = KEYPOINT_DICT["left_ankle"]
         val leftKneeIndex = KEYPOINT_DICT["left_knee"]
@@ -337,10 +322,7 @@ class CameraFragment : Fragment() {
         return (at1 - at2) * (180 / PI.toFloat())
     }
 
-    // Fungsi ini buat ngukur sudut pinggang saat squat
     private fun hipAngle(keypoints: List<Float>): Float {
-        // Input berupa list yang sudah dikonvert dengan fungsi getKeypoints()
-        // Output berupa sudut dari pinggang
         val leftHipIndex = KEYPOINT_DICT["left_hip"]
         val leftShoulderIndex = KEYPOINT_DICT["left_shoulder"]
         val leftKneeIndex = KEYPOINT_DICT["left_knee"]
@@ -356,11 +338,7 @@ class CameraFragment : Fragment() {
         return (at1 - at2) * (180 / PI.toFloat())
     }
 
-// ------------------------------ Fungsi Cek Repetisi Pushup
-
-    // Fungsi untuk mengecek apakah user pada posisi naik pushup
     private fun upPushup(elbowAngle: Float, repsVar: Int): Int {
-        // Input berupa hasil hitungan dari armAngle()
         var reps = repsVar
         if (!((abs(elbowAngle) > 170) && (abs(elbowAngle) < 200))) {
             return reps
@@ -377,11 +355,8 @@ class CameraFragment : Fragment() {
         return reps
     }
 
-    // Fungsi untuk mengecek apakah user sedang pada posisi bawah pushup
     private fun downPushup(elbowAngle: Float) {
-        // Input berupa hasil hitungan dari fungsi armAngle()
         if (!((abs(elbowAngle) > 50) && (abs(elbowAngle) < 90))) {
-            // exit function
             return
         }
 
@@ -394,26 +369,19 @@ class CameraFragment : Fragment() {
     }
 
     private fun checkPushup(backAngle: Float): Int {
-        // Input berupa hasil hitungan dari backAngle()
-        // measure appropriate back angle and returns warning code (1 OK, 0 BAD)
         if (abs(backAngle) <= 160) {
             return 0
         }
         return 1
     }
 
-// ------------------------------ Fungsi Cek Repetisi Squat
-
     private fun checkSquat(hipAngle: Float): Int {
-        // Input dari hasil fungsi hipAngle()
-        // measure appropriate hip angle and returns warning code (1 OK, 0 BAD)
         if (!((abs(hipAngle) > 60) && (abs(hipAngle) < 80))) {
             return 0
         }
         return 1
     }
 
-    // Fungsi untuk ngecek apakah user di posisi squat berdiri
     private fun upSquat(kneeAngle: Float, repsVar: Int): Int {
         var reps = repsVar
         if (!((abs(kneeAngle) > 170) && (abs(kneeAngle) < 195))) {
@@ -431,10 +399,8 @@ class CameraFragment : Fragment() {
         return reps
     }
 
-    // Fungsi untuk ngecek posisi user sedang jongkok saat squat
     private fun downSquat(kneeAngle: Float) {
         if (!((abs(kneeAngle) > 255) && (abs(kneeAngle) < 280))) {
-            // exit function
             return
         }
 
