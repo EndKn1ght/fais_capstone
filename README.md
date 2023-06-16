@@ -13,13 +13,13 @@ Fais Your Health Assistant is a mobile application developed as part of my Produ
 
 ## Screenshots Preview
 
-# Login Page
+### Login Page
 ![Screenshot 1](preview1.png)
 
-# Dashboard Page
+### Dashboard Page
 ![Screenshot 2](preview2.png)
 
-# Profile Page
+### Profile Page
 ![Screenshot 3](preview3.png)
 
 ## Technologies Used
